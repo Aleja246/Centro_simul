@@ -70,10 +70,24 @@ export function validarNombre(valor) {
   return null;
 }
 
+// Caracteres que nunca van en una dirección sola y que los programas de correo
+// toman como separador de destinatarios (coma, punto y coma) o como "Nombre <correo>".
+const CORREO_CARACTERES_NO_VALIDOS = /[\s,;:<>()[\]"\\]/;
+
 export function validarCorreo(valor, dominio) {
   const s = String(valor ?? "").trim();
   if (!s) return "Falta el correo.";
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s)) return "El correo no tiene un formato válido.";
+  const [local, host, ...sobrantes] = s.split("@");
+  const formatoValido =
+    sobrantes.length === 0 &&
+    Boolean(local) &&
+    Boolean(host) &&
+    !CORREO_CARACTERES_NO_VALIDOS.test(s) &&
+    !local.startsWith(".") &&
+    !local.endsWith(".") &&
+    !s.includes("..") &&
+    /^[^.]+(\.[^.]+)+$/.test(host);
+  if (!formatoValido) return "El correo no tiene un formato válido.";
   if (!s.toLowerCase().endsWith(dominio.toLowerCase())) return `El correo debe terminar en ${dominio}.`;
   return null;
 }
@@ -169,13 +183,13 @@ export function validarProfesor(d, hoy, config) {
   if (d.tipoReserva === "evento") {
     poner("fecha", validarAnticipacion(d.fecha, hoy, config.diasAnticipacion, "usted"));
   } else if (d.tipoReserva === "bloque") {
-    if (!(d.periodo in PERIODOS)) poner("periodo", "Falta indicar el periodo.");
+    if (!Object.hasOwn(PERIODOS, d.periodo)) poner("periodo", "Falta indicar el periodo.");
     poner("fechaInicio", validarAnticipacion(d.fechaInicio, hoy, config.diasAnticipacion, "usted"));
     const ini = parseFecha(d.fechaInicio);
     const fin = parseFecha(d.fechaFin);
     if (fin === null) poner("fechaFin", "Falta una fecha de fin válida.");
     else if (ini !== null && fin <= ini) poner("fechaFin", "La fecha de fin debe ser después de la fecha de inicio.");
-    const dias = Array.isArray(d.dias) ? d.dias.filter((n) => n in DIAS_BLOQUE) : [];
+    const dias = Array.isArray(d.dias) ? d.dias.filter((n) => Object.hasOwn(DIAS_BLOQUE, n)) : [];
     if (dias.length === 0) poner("dias", "Marque al menos un día de la semana.");
   } else {
     poner("tipoReserva", "Falta indicar si es por evento o por bloque.");
@@ -217,7 +231,7 @@ export function validarAlumnoMaterial(d, tipo, hoy, config) {
     poner("hayProfesor", "Falta indicar si hay un profesor responsable.");
   }
 
-  if (!(d.tipoActividad in TIPOS_ACTIVIDAD)) poner("tipoActividad", "Falta indicar el tipo de actividad.");
+  if (!Object.hasOwn(TIPOS_ACTIVIDAD, d.tipoActividad)) poner("tipoActividad", "Falta indicar el tipo de actividad.");
   else if (d.tipoActividad === "otro") poner("tipoOtro", validarTextoObligatorio(d.tipoOtro, MAX_ACTIVIDAD));
   poner("actividad", validarTextoObligatorio(d.actividad, MAX_ACTIVIDAD));
   poner("lugar", validarTextoObligatorio(d.lugar, MAX_ACTIVIDAD));
@@ -262,6 +276,9 @@ export function generarFolio(fecha, aleatorio = Math.random) {
 
 const linea = (etiqueta, valor) => `${etiqueta}: ${valor}`;
 const persona = (nombre, correo) => `${limpiar(nombre)} (${String(correo).trim()})`;
+// La cantidad ya se validó como solo dígitos: se quitan los ceros a la izquierda sin convertirla a número
+// (un número enorme saldría como 1e+23 en el correo).
+const cantidadTexto = (cantidad) => String(cantidad).trim().replace(/^0+(?=\d)/, "");
 const horario = (d) => `${d.horaInicio} – ${d.horaFin}`;
 const seccion = (titulo, lineas) => ["", `— ${titulo} —`, ...lineas];
 const momentoTexto = (fecha, hora) => `${fechaConDia(fecha)} ${hora}`;
@@ -353,7 +370,7 @@ function seccionesMaterial(etiqueta, d, config) {
     ]),
     ...seccion(
       "MATERIAL (no se prestan insumos)",
-      d.material.map((f, i) => `${i + 1}. ${limpiar(f.material)} — ${parseInt(String(f.cantidad).trim(), 10)}`),
+      d.material.map((f, i) => `${i + 1}. ${limpiar(f.material)} — ${cantidadTexto(f.cantidad)}`),
     ),
     ...seccion("RECOGIDA Y DEVOLUCIÓN", [
       linea("Recoge", momentoTexto(d.recogidaFecha, d.recogidaHora)),
