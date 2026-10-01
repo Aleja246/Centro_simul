@@ -139,10 +139,12 @@ export function validarMaterial(filas) {
   return errores;
 }
 
-// Recogida: no después del inicio de la actividad; si maxDias no es null, tampoco más días antes.
-export function validarRecogida(recogida, inicioActividad, maxDias) {
+// Recogida: no después del inicio de la actividad, no antes de hoy ("AAAA-MM-DD", opcional) y,
+// si maxDias no es null, tampoco más días antes de la actividad.
+export function validarRecogida(recogida, inicioActividad, maxDias, hoy) {
   if (recogida === null || inicioActividad === null) return null;
   if (recogida > inicioActividad) return "El material se recoge a más tardar cuando empieza tu actividad.";
+  if (hoy && recogida < parseFecha(hoy)) return "La fecha de recogida no puede ser anterior a hoy.";
   if (maxDias !== null && maxDias !== undefined && recogida < inicioActividad - maxDias * MS_DIA) {
     return `Puedes recoger el material hasta ${maxDias} días antes de tu actividad.`;
   }
@@ -243,7 +245,7 @@ export function validarAlumnoMaterial(d, tipo, hoy, config) {
   const recogida = momento(d.recogidaFecha, d.recogidaHora);
   if (!parseFecha(d.recogidaFecha)) poner("recogidaFecha", "Falta la fecha en que recogen el material.");
   if (parseHora(d.recogidaHora) === null) poner("recogidaHora", "Falta la hora en que recogen el material.");
-  poner("recogidaFecha", validarRecogida(recogida, momento(d.fecha, d.horaInicio), config.maxDiasAntesRecogida));
+  poner("recogidaFecha", validarRecogida(recogida, momento(d.fecha, d.horaInicio), config.maxDiasAntesRecogida, hoy));
 
   const devolucion = momento(d.devolucionFecha, d.devolucionHora);
   if (!parseFecha(d.devolucionFecha)) poner("devolucionFecha", "Falta la fecha en que devuelven el material.");

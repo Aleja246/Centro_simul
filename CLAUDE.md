@@ -132,7 +132,7 @@ Sin formulario. Texto: los espacios del CSC son para actividades de clase; para 
 - Fecha de actividad (o inicio de bloque) ≥ hoy + `diasAnticipacion`. Mensaje: "Las solicitudes se hacen con al menos 7 días de anticipación. Tu actividad es en X días."
 - Hora de fin > hora de inicio. Bloque: fecha de fin > fecha de inicio y al menos un día marcado.
 - Material: al menos una fila; material no vacío; cantidad entero ≥ 1.
-- Recogida: no después del inicio de la actividad. Si `maxDiasAntesRecogida` no es null, tampoco más de esos días antes.
+- Recogida: no después del inicio de la actividad y no antes de hoy. Si `maxDiasAntesRecogida` no es null, tampoco más de esos días antes.
 - Devolución: no antes del fin de la actividad y no más de `horasMaxDevolucion` horas después del fin. Mensaje: "El material se devuelve a más tardar 24 horas después de que termina tu actividad."
 - Todas las casillas obligatorias marcadas.
 

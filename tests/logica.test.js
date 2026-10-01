@@ -127,9 +127,23 @@ test("falla: recogida después del inicio de la actividad", () => {
   const inicio = momento("2026-10-15", "09:00");
   assert.ok(validarRecogida(momento("2026-10-15", "09:01"), inicio, null));
   assert.equal(validarRecogida(momento("2026-10-15", "09:00"), inicio, null), null);
-  assert.equal(validarRecogida(momento("2026-01-01", "09:00"), inicio, null), null); // sin límite inferior
+  assert.equal(validarRecogida(momento("2026-01-01", "09:00"), inicio, null), null); // sin "hoy" ni maxDias: no hay límite inferior
   const d = alumMaterial({ recogidaHora: "09:30" });
   assert.ok(validarAlumnoMaterial(d, "salida", HOY, CONFIG).errores.recogidaFecha);
+});
+
+test("recogida: no puede ser anterior a hoy (hoy mismo sí)", () => {
+  const inicio = momento("2026-10-15", "09:00");
+  assert.equal(validarRecogida(momento("2026-09-30", "00:00"), inicio, null, HOY), null);
+  assert.equal(validarRecogida(momento("2026-10-14", "08:00"), inicio, null, HOY), null);
+  assert.equal(validarRecogida(momento("2026-09-29", "23:59"), inicio, null, HOY), "La fecha de recogida no puede ser anterior a hoy.");
+  assert.ok(validarRecogida(momento("2025-10-15", "08:00"), inicio, null, HOY));
+});
+
+test("recogida: en el formulario, anterior a hoy da error en recogidaFecha y hoy mismo pasa", () => {
+  const r = validarAlumnoMaterial(alumMaterial({ recogidaFecha: "2026-09-29" }), "salida", HOY, CONFIG);
+  assert.equal(r.errores.recogidaFecha, "La fecha de recogida no puede ser anterior a hoy.");
+  assert.equal(validarAlumnoMaterial(alumMaterial({ recogidaFecha: "2026-09-30", recogidaHora: "08:00" }), "cites", HOY, CONFIG).ok, true);
 });
 
 test("recogida: con maxDiasAntesRecogida no puede ser más temprano", () => {
