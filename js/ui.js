@@ -498,8 +498,17 @@ function iniciarFormulario(form, ajustes) {
   actualizarVisibilidad(form);
 
   form.addEventListener("change", () => actualizarVisibilidad(form));
-  // En cuanto se corrige un campo, se quita su error.
-  const alEditar = (evento) => quitarError(form, evento.target.closest("[data-campo]"));
+  // En cuanto se corrige un campo, se quita su error. También se quitan los errores de otros
+  // campos que eran consecuencia de ese (p. ej. recogida y devolución al corregir la fecha).
+  // Solo se quitan: los errores nuevos aparecen hasta que se presiona el botón.
+  const alEditar = (evento) => {
+    quitarError(form, evento.target.closest("[data-campo]"));
+    if (!$(".con-error", form)) return;
+    const { errores } = ajustes.validar(leerFormulario(form), ahoraLocal(new Date()).slice(0, 10));
+    for (const contenedor of $$(".con-error", form)) {
+      if (!Object.hasOwn(errores, contenedor.dataset.campo)) quitarError(form, contenedor);
+    }
+  };
   form.addEventListener("input", alEditar);
   form.addEventListener("change", alEditar);
 
