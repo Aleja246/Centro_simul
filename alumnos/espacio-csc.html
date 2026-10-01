@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Espacio del CSC · Centro de Simulación Clínica</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <main>
+    <a class="volver solo-formulario" href="index.html">← Menú de alumnos</a>
+    <h1 class="solo-formulario">Espacio del CSC para una actividad de clase</h1>
+
+    <form class="solo-formulario" data-formulario="alumno-espacio" novalidate>
+      <div class="campo" data-campo="nombre">
+        <label for="nombre">Tu nombre completo</label>
+        <input id="nombre" name="nombre" type="text" autocomplete="name">
+      </div>
+      <div class="campo" data-campo="correo">
+        <label for="correo">Tu correo @tec.mx</label>
+        <input id="correo" name="correo" type="email" inputmode="email" autocapitalize="none" autocomplete="email">
+      </div>
+      <div class="campo" data-campo="profNombre">
+        <label for="profNombre">Nombre completo del profesor responsable</label>
+        <input id="profNombre" name="profNombre" type="text">
+      </div>
+      <div class="campo" data-campo="profCorreo">
+        <label for="profCorreo">Correo @tec.mx del profesor responsable</label>
+        <input id="profCorreo" name="profCorreo" type="email" inputmode="email" autocapitalize="none" autocomplete="off">
+      </div>
+      <div class="campo" data-campo="actividad">
+        <label for="actividad">Nombre de la actividad / materia</label>
+        <input id="actividad" name="actividad" type="text">
+      </div>
+      <div class="campo" data-campo="fecha">
+        <label for="fecha">Fecha</label>
+        <input id="fecha" name="fecha" type="date">
+      </div>
+      <div class="dos-columnas">
+        <div class="campo" data-campo="horaInicio">
+          <label for="horaInicio">Hora de inicio</label>
+          <input id="horaInicio" name="horaInicio" type="time">
+        </div>
+        <div class="campo" data-campo="horaFin">
+          <label for="horaFin">Hora de fin</label>
+          <input id="horaFin" name="horaFin" type="time">
+        </div>
+      </div>
+
+      <div class="campo" data-campo="casillaFormato">
+        <label class="opcion"><input type="checkbox" name="casillaFormato"> Adjuntaré el formato "Diseño de actividades" completo antes de enviar</label>
+        <p class="pequeno"><a href="../formatos/diseno-de-actividades.pdf" data-config-href="urlFormatoDiseno" download>Descargar el formato</a></p>
+      </div>
+
+      <button class="boton boton-primario" type="submit">Preparar mi correo</button>
+    </form>
+  </main>
+  <script type="module" src="../js/ui.js"></script>
+</body>
+</html>
