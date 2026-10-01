@@ -23,9 +23,8 @@ import {
   fechaConDia,
   ahoraLocal,
 } from "../js/logica.js";
+import { HOY, AHORA, profEvento, profBloque, alumEspacio, alumMaterial } from "./datos-ejemplo.js";
 
-const HOY = "2026-09-30";
-const AHORA = "2026-09-30T14:32";
 const cfg = (cambios = {}) => ({ ...CONFIG, ...cambios });
 
 // Aleatorio fijo que produce el sufijo K7Q2 (índices 9, 29, 14, 24 del alfabeto de 32 caracteres).
@@ -34,70 +33,6 @@ const secuencia = (indices) => {
   return () => (indices[i++] + 0.5) / 32;
 };
 const ALEATORIO_K7Q2 = () => secuencia([9, 29, 14, 24]);
-
-// ---------- Datos válidos de ejemplo ----------
-
-const profEvento = (c = {}) => ({
-  tipoReserva: "evento",
-  nombre: "Juan Pérez Ruiz",
-  correo: "juan.perez@tec.mx",
-  actividad: "Taller de sutura",
-  fecha: "2026-10-15",
-  horaInicio: "09:00",
-  horaFin: "11:00",
-  casillaFormato: true,
-  casillaOutlook: true,
-  ...c,
-});
-
-const profBloque = (c = {}) =>
-  profEvento({
-    tipoReserva: "bloque",
-    fecha: undefined,
-    periodo: "semestral",
-    fechaInicio: "2026-10-12",
-    fechaFin: "2026-12-04",
-    dias: [1, 3],
-    ...c,
-  });
-
-const alumEspacio = (c = {}) => ({
-  nombre: "Ana López García",
-  correo: "A01234567@tec.mx",
-  profNombre: "Juan Pérez Ruiz",
-  profCorreo: "juan.perez@tec.mx",
-  actividad: "Práctica de signos vitales",
-  fecha: "2026-10-15",
-  horaInicio: "09:00",
-  horaFin: "11:00",
-  casillaFormato: true,
-  ...c,
-});
-
-const alumMaterial = (c = {}) => ({
-  nombre: "Ana López García",
-  correo: "A01234567@tec.mx",
-  hayProfesor: true,
-  profNombre: "Juan Pérez Ruiz",
-  profCorreo: "juan.perez@tec.mx",
-  tipoActividad: "brigada",
-  actividad: "Brigada de salud comunitaria",
-  lugar: "Col. Independencia, Monterrey",
-  fecha: "2026-10-15",
-  horaInicio: "09:00",
-  horaFin: "14:00",
-  material: [
-    { material: "Simulador RCP adulto", cantidad: "2" },
-    { material: "Baumanómetro", cantidad: "4" },
-  ],
-  recogidaFecha: "2026-10-15",
-  recogidaHora: "08:00",
-  devolucionFecha: "2026-10-15",
-  devolucionHora: "15:30",
-  casillaInsumos: true,
-  casillaSalida: true,
-  ...c,
-});
 
 // ---------- Los formularios válidos pasan ----------
 
