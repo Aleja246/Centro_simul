@@ -9,7 +9,7 @@ No hay servidor, base de datos ni servicios externos. **El sitio no guarda ning�
 
 ## Lo más común (sin programar)
 
-| Quiero… | Qué hago |
+| Modificaciones | En |
 |---|---|
 | Cambiar el correo del CSC | En `js/config.js`, cambiar `correoCSC`. |
 | Cambiar cuántas horas se tardan en revisar, o el límite de devolución | En `js/config.js`: `horasRevision`, `horasMaxDevolucion`. Los textos del sitio se actualizan solos. |
@@ -63,32 +63,30 @@ El formulario **no deja continuar** si algo de esto falla:
 ## Reglas futuras: pendientes de definir con la Dra.
 
 Estas reglas **no están activas**. Se detectaron al probar el sitio llenándolo mal a propósito.
-Para cada una, la Dra. puede decir **sí** o **no** en el próximo review; si es sí, se agrega a
-`js/logica.js` y a las pruebas.
+En el próximo review se agrega a `js/logica.js` y a las pruebas.
 
 1. **Profesor con el mismo nombre que el alumno (pero otro correo).**
    Hoy solo se compara el correo, así que un alumno puede ponerse a sí mismo como profesor usando un segundo correo.
    Propuesta: comparar también los nombres, sin importar mayúsculas ni acentos.
-   Decisión de la Dra.: [ ] Sí  [ ] No
+  
 
 2. **Fechas muy lejanas.**
    Una fecha de 2062 en vez de 2026 (error de dedo) hoy pasa.
    Propuesta: poner un tope máximo (¿cuántos meses o años hacia adelante?).
-   Decisión de la Dra.: [ ] Sí  [ ] No  Tope: __________
 
 3. **Cantidad máxima por material.**
    Hoy se aceptan cantidades como 5000.
    Propuesta: poner un tope por material (¿cuánto?).
-   Decisión de la Dra.: [ ] Sí  [ ] No  Tope: __________
+   
 
 4. **Bloque sin sesiones.**
    Un bloque de dos días con solo el sábado marcado nunca tendría una sesión y hoy pasa.
    Propuesta: exigir que al menos uno de los días marcados caiga entre la fecha de inicio y la de fin.
-   Decisión de la Dra.: [ ] Sí  [ ] No
+
 
 5. **Texto sin sentido escrito en serio** (por ejemplo `asdf asdf` como nombre).
    Ninguna validación puede saber si un texto es verdad. Hoy lo revisa una persona del CSC al recibir el correo.
-   Decisión de la Dra.: [ ] Se deja así  [ ] Agregar alguna comprobación: __________
+  
 
 ## Pendientes por confirmar con la Dra.
 
@@ -157,13 +155,11 @@ Los QR son **estáticos**: llevan la dirección escrita dentro y no caducan, per
 pip install "qrcode[pil]"
 python3 scripts/generar_qr.py https://USUARIO.github.io/REPO/
 ```
-
 Crea en `qr/` un PNG (para pantallas e impresiones sencillas) y un SVG (para impresión grande) de:
 `inicio` (raíz), `profesores` y `alumnos`.
 
 > Los QR que ya están en `qr/` se generaron con `https://aleja246.github.io/Centro_simul/`.
-> **Compruébalos contra la dirección real** antes de imprimirlos; si es otra, vuelve a ejecutar el comando.
-
+> 
 ## Estructura
 
 ```
@@ -208,9 +204,6 @@ README.md para quien mantenga el sitio: cómo cambiar config.js, probar, publica
 Prueba en navegador con pantalla de celular (375 px). Yo no puedo probar desde aquí el envío real en Outlook y en la app de correo; eso tendrías que hacerlo tú.
 Dudas (no voy a inventar las respuestas)
 
-Formato de Diseño de actividades
-
-Es un PDF que no parece editable, pero las reglas piden "adjuntar el formato completo". ¿La Dra. tiene la versión Word o PowerPoint? Si no, ¿dejo el PDF y en urlFormatoDiseno pongo formatos/diseno-de-actividades.pdf?
 
 Campos y reglas
 
