@@ -224,12 +224,3 @@ Tipo "Otro (especificar)": ¿es obligatorio escribir qué es?
 ¿La fecha de recogida también debe ser a partir de hoy o de hoy + 7 días? Hoy solo está definido que no sea después del inicio.
 Si el correo pasa de ~1,800 caracteres (mucho material), ¿qué hago? Mi propuesta: avisar y recomendar el botón "Copiar correo".
 Extracurricular: el botón para escribirle a Carmen Paz, ¿lleva un asunto ya escrito o va vacío?
-
-Correo (lo tienes que confirmar tú con una cuenta @tec.mx)
-
-No es seguro que el enlace de Outlook web acepte cc. Te propongo mostrar siempre, en solicitudes con profesor: "Verifica que el profesor esté en CC; si no, agrégalo a mano". ¿Te parece?
-
-Publicación
-
-¿La URL final es https://aleja246.github.io/centro_simul/? La necesito exacta, con mayúsculas y minúsculas, para los QR.
-Voy a trabajar en esta rama. ¿Quieres que al final abra un PR a main para que se publique?
