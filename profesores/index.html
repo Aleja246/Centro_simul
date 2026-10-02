@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profesores · Centro de Simulación Clínica</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <main>
+    <a class="volver solo-formulario" href="../index.html">← Inicio</a>
+    <h1 class="solo-formulario">Solicitud para profesores</h1>
+
+    <div class="reglas solo-formulario">
+      <ul>
+        <li>Solicite con al menos una semana de anticipación, desde su correo <span data-config="dominioInstitucional">@tec.mx</span>.</li>
+        <li>Puede reservar por evento o por bloque (anual, semestral o trimestral).</li>
+        <li>Adjunte el formato "Diseño de actividades" completo (<a href="../formatos/diseno-de-actividades.pdf" data-config-href="urlFormatoDiseno" download>descargar</a>).</li>
+        <li>Revisamos en máximo <span data-config="horasRevision">48</span> horas hábiles. Si hay disponibilidad, recibirá una invitación de Outlook; si no, le contactaremos para buscar alternativas.</li>
+      </ul>
+    </div>
+
+    <form class="solo-formulario" data-formulario="profesor" novalidate>
+      <fieldset class="campo" data-campo="tipoReserva">
+        <legend>Tipo de reserva</legend>
+        <label class="opcion"><input type="radio" name="tipoReserva" value="evento"> Por evento</label>
+        <label class="opcion"><input type="radio" name="tipoReserva" value="bloque"> Por bloque</label>
+      </fieldset>
+
+      <div class="campo" data-campo="nombre">
+        <label for="nombre">Nombre completo del profesor responsable</label>
+        <input id="nombre" name="nombre" type="text" autocomplete="name">
+      </div>
+      <div class="campo" data-campo="correo">
+        <label for="correo">Correo institucional (@tec.mx)</label>
+        <input id="correo" name="correo" type="email" inputmode="email" autocapitalize="none" autocomplete="email">
+      </div>
+      <div class="campo" data-campo="actividad">
+        <label for="actividad">Nombre de la actividad / materia</label>
+        <input id="actividad" name="actividad" type="text">
+      </div>
+
+      <div data-si="tipoReserva=evento" hidden>
+        <div class="campo" data-campo="fecha">
+          <label for="fecha">Fecha</label>
+          <input id="fecha" name="fecha" type="date">
+        </div>
+      </div>
+
+      <div data-si="tipoReserva=bloque" hidden>
+        <div class="campo" data-campo="periodo">
+          <label for="periodo">Periodo</label>
+          <select id="periodo" name="periodo">
+            <option value="">Elija una opción</option>
+            <option value="anual">Anual</option>
+            <option value="semestral">Semestral</option>
+            <option value="trimestral">Trimestral</option>
+          </select>
+        </div>
+        <div class="campo" data-campo="fechaInicio">
+          <label for="fechaInicio">Fecha de inicio</label>
+          <input id="fechaInicio" name="fechaInicio" type="date">
+        </div>
+        <div class="campo" data-campo="fechaFin">
+          <label for="fechaFin">Fecha de fin</label>
+          <input id="fechaFin" name="fechaFin" type="date">
+        </div>
+        <fieldset class="campo" data-campo="dias">
+          <legend>Días de la semana</legend>
+          <div class="opciones-dias">
+            <label class="opcion"><input type="checkbox" name="dias" value="1"> Lunes</label>
+            <label class="opcion"><input type="checkbox" name="dias" value="2"> Martes</label>
+            <label class="opcion"><input type="checkbox" name="dias" value="3"> Miércoles</label>
+            <label class="opcion"><input type="checkbox" name="dias" value="4"> Jueves</label>
+            <label class="opcion"><input type="checkbox" name="dias" value="5"> Viernes</label>
+            <label class="opcion"><input type="checkbox" name="dias" value="6"> Sábado</label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="dos-columnas">
+        <div class="campo" data-campo="horaInicio">
+          <label for="horaInicio">Hora de inicio</label>
+          <input id="horaInicio" name="horaInicio" type="time">
+        </div>
+        <div class="campo" data-campo="horaFin">
+          <label for="horaFin">Hora de fin</label>
+          <input id="horaFin" name="horaFin" type="time">
+        </div>
+      </div>
+
+      <div class="campo" data-campo="casillaFormato">
+        <label class="opcion"><input type="checkbox" name="casillaFormato"> Adjuntaré el formato "Diseño de actividades" completo antes de enviar el correo</label>
+        <p class="pequeno"><a href="../formatos/diseno-de-actividades.pdf" data-config-href="urlFormatoDiseno" download>Descargar el formato</a></p>
+      </div>
+      <div class="campo" data-campo="casillaOutlook">
+        <label class="opcion"><input type="checkbox" name="casillaOutlook"> Entiendo que la reserva se confirma solo con la invitación de Outlook del CSC</label>
+      </div>
+
+      <button class="boton boton-primario" type="submit">Preparar mi correo</button>
+    </form>
+  </main>
+  <script type="module" src="../js/ui.js"></script>
+</body>
+</html>
