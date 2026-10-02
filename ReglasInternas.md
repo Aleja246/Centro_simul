@@ -1,4 +1,4 @@
-# CLAUDE.md — Solicitudes del Centro de Simulación Clínica (CSC)
+# — Solicitudes del Centro de Simulación Clínica (CSC)
 
 ## Contexto
 El CSC recibe solicitudes de profesores y alumnos por correo. Hoy se contesta con una autorespuesta larga que mezcla las reglas de ambos; la gente no la lee y llegan solicitudes incompletas o con errores. La coordinadora del CSC (la Dra.) necesita que TODA solicitud le llegue como correo a la bandeja del CSC, completa y siempre con el mismo formato.
