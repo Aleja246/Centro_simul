@@ -25,6 +25,10 @@ No hay servidor, base de datos ni servicios externos. El sitio no guarda ningún
 regreso de simuladores con tarjetas NFC. Aprobado (26/10/2026): **sí guarda datos, en Firebase**
 (Authentication + Firestore), con la configuración en `js/config.js` → `bitacora`. Firebase vive copiado en
 `js/vendor/firebase/` (sin CDN). Sin Firebase configurado funciona en modo demostración (localStorage).
+También aprobado (26/10/2026): **escribe en el Excel del inventario** (OneDrive/SharePoint del Tec) con
+Microsoft Graph y la cuenta del Tec de quien la usa (MSAL copiado en `js/vendor/msal/`). El catálogo de equipos
+sale del Excel (hoja *1Inventario*); cada movimiento se agrega a la bitácora del Excel y la verificación llena
+*1Inventario* y la hoja de *Verificación*.
 Las demás reglas del proyecto siguen igual para todo lo demás. Detalles en el README.
 
 ## Estructura

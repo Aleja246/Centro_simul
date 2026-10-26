@@ -18,10 +18,16 @@ service cloud.firestore {
         ];
     }
 
+    match /catalogo/{id}    { allow read, write: if esPersonal(); }
     match /zonas/{id}       { allow read, write: if esPersonal(); }
     match /simuladores/{id} { allow read, write: if esPersonal(); }
 
-    // El historial no se edita ni se borra desde la página: solo se agregan movimientos.
-    match /movimientos/{id} { allow read, create: if esPersonal(); }
+    // El historial no se edita ni se borra desde la página: solo se agregan movimientos
+    // y se marca si ya se escribieron en el Excel.
+    match /movimientos/{id} {
+      allow read, create: if esPersonal();
+      allow update: if esPersonal()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["excel"]);
+    }
   }
 }
