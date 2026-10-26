@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>Bitácora de simuladores · Centro de Simulación Clínica</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/simuladores.css">
+</head>
+<body class="bitacora">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-nfc" viewBox="0 0 24 24"><path d="M6.5 9a4.5 4.5 0 0 1 0 6"/><path d="M10 6.5a8 8 0 0 1 0 11"/><path d="M13.5 4a11.5 11.5 0 0 1 0 16"/><path d="M17 2a15 15 0 0 1 0 20"/></symbol>
+      <symbol id="i-salida" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+      <symbol id="i-regreso" viewBox="0 0 24 24"><path d="M9 10l-5 5 5 5"/><path d="M20 4v7a4 4 0 0 1-4 4H4"/></symbol>
+      <symbol id="i-reubicacion" viewBox="0 0 24 24"><path d="M4 8h14"/><path d="M14 4l4 4-4 4"/><path d="M20 16H6"/><path d="M10 12l-4 4 4 4"/></symbol>
+      <symbol id="i-revision" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L4 16.7 7.3 20l5.3-5.3a4 4 0 0 0 5.1-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+      <symbol id="i-reloj" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-buscar" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+      <symbol id="i-mas" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-editar" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M14 6l4 4"/></symbol>
+      <symbol id="i-borrar" viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13"/><path d="M9 7V4h6v3"/></symbol>
+      <symbol id="i-copiar" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h9"/></symbol>
+      <symbol id="i-ok" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+      <symbol id="i-alerta" viewBox="0 0 24 24"><path d="M12 3L2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></symbol>
+      <symbol id="i-cerrar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="i-plano" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 12h7v8M10 4v5M14 12h7M14 12v8"/></symbol>
+      <symbol id="i-lista" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01"/></symbol>
+      <symbol id="i-historial" viewBox="0 0 24 24"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1L3.5 8.5"/><path d="M3.5 3.5v5h5"/><path d="M12 7.5V12l3 2"/></symbol>
+      <symbol id="i-ajustes" viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+      <symbol id="i-subir" viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></symbol>
+      <symbol id="i-bajar" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+      <symbol id="i-descargar" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></symbol>
+      <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="barra">
+    <div class="barra-in">
+      <div class="marca">
+        <span class="marca-icono"><svg class="i"><use href="#i-nfc"/></svg></span>
+        <span class="marca-texto"><b>Bitácora de simuladores</b><span>Centro de Simulación Clínica</span></span>
+      </div>
+      <nav class="pestanas" id="pestanas" aria-label="Secciones" hidden>
+        <button type="button" class="pestana" data-vista="plano"><svg class="i"><use href="#i-plano"/></svg><span>Plano</span></button>
+        <button type="button" class="pestana" data-vista="inventario"><svg class="i"><use href="#i-lista"/></svg><span>Simuladores</span></button>
+        <button type="button" class="pestana-leer" data-accion="leer" aria-label="Leer tarjeta NFC"><span class="leer-circulo"><svg class="i"><use href="#i-nfc"/></svg></span><span>Leer tarjeta</span></button>
+        <button type="button" class="pestana" data-vista="historial"><svg class="i"><use href="#i-historial"/></svg><span>Historial</span></button>
+        <button type="button" class="pestana" data-vista="ajustes"><svg class="i"><use href="#i-ajustes"/></svg><span>Ajustes</span></button>
+      </nav>
+      <button type="button" class="boton-leer" data-accion="leer" id="boton-leer" hidden><svg class="i"><use href="#i-nfc"/></svg>Leer tarjeta</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <noscript><p class="aviso">Esta página necesita JavaScript.</p></noscript>
+    <div id="avisos"></div>
+
+    <!-- Entrar (solo con Firebase) -->
+    <section id="v-entrar" class="entrar" hidden>
+      <h1>Bitácora de simuladores</h1>
+      <p>Solo para el personal del CSC. Entra con el correo y la contraseña que te dieron.</p>
+      <form id="f-entrar" novalidate>
+        <div class="campo"><label for="e-correo">Correo</label><input id="e-correo" type="email" autocomplete="username" inputmode="email" required></div>
+        <div class="campo"><label for="e-clave">Contraseña</label><input id="e-clave" type="password" autocomplete="current-password" required></div>
+        <p class="error" id="e-error" role="alert" hidden></p>
+        <button class="boton boton-primario" type="submit">Entrar</button>
+      </form>
+      <button type="button" class="boton-texto" data-accion="recuperar">Olvidé mi contraseña</button>
+    </section>
+
+    <!-- Plano -->
+    <section id="v-plano" class="vista" hidden>
+      <div class="resumen" id="resumen" aria-label="Estado del centro"></div>
+      <div class="plano-cols">
+        <aside class="fuera" aria-labelledby="t-fuera">
+          <div class="encabezado"><h2 id="t-fuera">Fuera ahora</h2><span class="cuenta" id="fuera-n">0</span></div>
+          <div class="fuera-lista" id="fuera"></div>
+        </aside>
+        <div class="plano-principal">
+          <div class="encabezado">
+            <h2>Plano del centro</h2>
+            <label class="buscar"><span class="oculto">Buscar en el plano</span><svg class="i"><use href="#i-buscar"/></svg><input id="q-plano" type="search" placeholder="Buscar simulador" autocomplete="off"></label>
+          </div>
+          <div class="plano" id="plano"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inventario -->
+    <section id="v-inventario" class="vista" hidden>
+      <div class="encabezado"><h2>Simuladores</h2><span class="cuenta" id="inv-n">0</span>
+        <button type="button" class="boton-chico boton-chico-primario empuja" data-accion="nuevo"><svg class="i"><use href="#i-mas"/></svg>Nuevo simulador</button></div>
+      <div class="filtros">
+        <label class="buscar"><span class="oculto">Buscar simulador</span><svg class="i"><use href="#i-buscar"/></svg><input id="q-inv" type="search" placeholder="Nombre, código o categoría" autocomplete="off"></label>
+        <div class="chips" id="categorias"></div>
+      </div>
+      <div id="inventario"></div>
+    </section>
+
+    <!-- Historial -->
+    <section id="v-historial" class="vista" hidden>
+      <div class="encabezado"><h2>Historial</h2>
+        <button type="button" class="boton-chico empuja" data-accion="csv"><svg class="i"><use href="#i-descargar"/></svg>Descargar CSV</button></div>
+      <div class="filtros">
+        <div class="chips" id="tipos">
+          <button type="button" class="chip" data-tipo="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="chip" data-tipo="salida" aria-pressed="false">Salidas</button>
+          <button type="button" class="chip" data-tipo="regreso" aria-pressed="false">Regresos</button>
+          <button type="button" class="chip" data-tipo="reubicacion" aria-pressed="false">Cambios de lugar</button>
+          <button type="button" class="chip" data-tipo="revision" aria-pressed="false">Revisiones</button>
+        </div>
+        <label class="buscar"><span class="oculto">Buscar en el historial</span><svg class="i"><use href="#i-buscar"/></svg><input id="q-hist" type="search" placeholder="Simulador, persona o zona" autocomplete="off"></label>
+      </div>
+      <div id="historial"></div>
+    </section>
+
+    <!-- Ajustes -->
+    <section id="v-ajustes" class="vista" hidden>
+      <div id="ajustes"></div>
+    </section>
+  </main>
+
+  <datalist id="dl-responsables"></datalist>
+  <datalist id="dl-destinos"></datalist>
+  <datalist id="dl-categorias"></datalist>
+
+  <dialog class="hoja" id="hoja" aria-labelledby="hoja-titulo"><div class="hoja-in" id="hoja-in"></div></dialog>
+  <div class="mensaje" id="mensaje" role="status" aria-live="polite" hidden></div>
+
+  <script type="module" src="../js/simuladores-ui.js"></script>
+</body>
+</html>
