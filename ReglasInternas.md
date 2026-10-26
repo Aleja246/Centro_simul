@@ -20,6 +20,13 @@ No hay servidor, base de datos ni servicios externos. El sitio no guarda ningún
 - Español claro y breve. Profesores: trato de usted. Alumnos: tú.
 - Rutas relativas en todo el sitio (se publica en un subdirectorio de GitHub Pages).
 
+## Excepción aprobada: bitácora de simuladores
+`/simuladores/` es una herramienta interna del personal (no de solicitudes) para registrar la salida y el
+regreso de simuladores con tarjetas NFC. Aprobado (26/10/2026): **sí guarda datos, en Firebase**
+(Authentication + Firestore), con la configuración en `js/config.js` → `bitacora`. Firebase vive copiado en
+`js/vendor/firebase/` (sin CDN). Sin Firebase configurado funciona en modo demostración (localStorage).
+Las demás reglas del proyecto siguen igual para todo lo demás. Detalles en el README.
+
 ## Estructura
 ```
 /index.html                     ¿Eres profesor o alumno? (dos botones grandes)

@@ -6,6 +6,7 @@ El sitio no envía nada por su cuenta: arma el correo y lo abre en el correo de 
 que solo adjunta (si aplica) y presiona **Enviar** desde su cuenta @tec.mx.
 
 No hay servidor, base de datos ni servicios externos. El sitio no guarda ningún dato.
+**Única excepción:** la [bitácora de simuladores](#bitácora-de-simuladores) (`simuladores/`), que usa Firebase.
 
 ## Lo más común
 
@@ -113,6 +114,7 @@ node --test
 - `tests/logica.test.js`: validaciones, folio, correo y enlaces.
 - `tests/llenado-malo.test.js`: cientos de formas de llenar mal cada formulario; **todas deben ser rechazadas**.
 - `tests/datos-ejemplo.js`: datos válidos que usan las pruebas.
+- `tests/simuladores.test.js`: bitácora de simuladores (tarjetas, validaciones, historial, CSV).
 
 Si se cambia una regla en `js/logica.js`, se cambian o agregan pruebas en el mismo cambio.
 
@@ -125,6 +127,83 @@ Si se cambia una regla en `js/logica.js`, se cambian o agregan pruebas en el mis
 
 Todas las rutas del sitio son relativas, por eso funciona dentro de esa subcarpeta. El archivo `.nojekyll` evita que GitHub procese los archivos.
 
+
+## Bitácora de simuladores
+
+Página para el **personal del CSC**: `https://aleja246.github.io/Centro_simul/simuladores/`
+(no aparece en la portada; se guarda en favoritos).
+
+Registra cuándo sale un simulador, quién lo lleva, cuándo regresa y en qué zona se deja.
+Cada simulador lleva una tarjeta NFC.
+
+- **Plano:** las zonas del centro con sus simuladores, y la lista "Fuera ahora" (en rojo si pasan
+  `bitacora.horasAlerta` horas fuera).
+- **Ficha del simulador** (al leer su tarjeta o tocarlo): registrar salida (quién y para qué),
+  registrar regreso (zona donde se deja y si necesita revisión), cambiarlo de lugar, editarlo.
+- **Historial:** todos los movimientos, con filtro y descarga en CSV.
+- **Ajustes:** zonas (nombre, color, tamaño, orden, tarjeta de zona), guía de tarjetas, datos de ejemplo.
+
+### Modo demostración y Firebase
+
+Mientras `bitacora.firebase` en `js/config.js` esté vacío, la página funciona en **modo demostración**:
+todo se guarda solo en ese navegador. Sirve para probar.
+
+Para que todo el personal vea lo mismo, se conecta a **Firebase** (de Google, plan gratuito Spark):
+
+1. Entrar a <https://console.firebase.google.com> → **Crear un proyecto** (Analytics no hace falta).
+2. **Authentication → Comenzar → Correo electrónico/contraseña → Habilitar.**
+3. **Authentication → Usuarios → Agregar usuario**: un correo y contraseña por cada persona del personal.
+4. **Firestore Database → Crear base de datos** → modo de producción → ubicación cercana (por ejemplo `nam5`).
+5. **Firestore Database → Reglas**: pegar el contenido de `firestore.rules`, poner los correos del
+   personal en la lista y **Publicar**.
+6. **Configuración del proyecto** (engrane) → **Tus apps → Web (`</>`)** → registrar la app y copiar
+   `apiKey`, `authDomain`, `projectId` y `appId` en `js/config.js` → `bitacora.firebase`.
+7. **Authentication → Configuración → Dominios autorizados** → agregar `aleja246.github.io`.
+8. Subir el cambio a `main`. Al abrir la bitácora pedirá correo y contraseña.
+
+La `apiKey` de Firebase **no es secreta** (va en todas las páginas que usan Firebase): lo que protege
+los datos son las cuentas y las reglas de `firestore.rules`.
+
+**Dar acceso a alguien nuevo:** crear su usuario (paso 3) y agregar su correo a las reglas (paso 5).
+**Quitar acceso:** borrar su correo de las reglas y su usuario.
+
+### Tarjetas NFC
+
+Sirven etiquetas NFC comunes **NTAG213 o NTAG215**. Cada tarjeta puede llevar el **enlace** del simulador
+(`…/simuladores/#SIM-004`), su **número de serie** guardado en la bitácora, o las dos cosas.
+
+| Dónde | Leer | Grabar el enlace |
+|---|---|---|
+| **Android con Chrome** | Directo en la página (botón "Leer tarjeta"; la primera vez pide permiso de NFC). | Ficha del simulador → **Tarjeta NFC → Grabar ahora**. |
+| **iPhone** | Acercar el iPhone a la tarjeta grabada: abre la ficha del simulador. | Con una app como NFC Tools (la ficha muestra el enlace para copiar). |
+| **Computadora** | Lector USB que escriba como teclado (modo HID / *keyboard emulation*). | — |
+
+Si se lee una tarjeta que no está registrada, la página pregunta de qué simulador (o zona) es.
+
+### Datos que cambian (`js/config.js` → `bitacora`)
+
+| Dato | Para qué |
+|---|---|
+| `horasAlerta` | Después de cuántas horas fuera un simulador se marca en rojo. |
+| `urlSitio` | Dirección del sitio; va en el enlace que se graba en las tarjetas. Si cambia, hay que volver a grabarlas. |
+| `firebase` | Datos del proyecto de Firebase (ver arriba). Vacío = modo demostración. |
+
+### Archivos de la bitácora
+
+```
+simuladores/index.html        La página
+css/simuladores.css           Estilos propios (usa los de styles.css)
+js/simuladores-logica.js      Funciones puras: tarjetas, validaciones, resumen, historial, CSV
+js/simuladores-datos.js       Firebase o modo demostración (mismas funciones)
+js/simuladores-nfc.js         Web NFC (Android) y lector USB
+js/simuladores-ui.js          Todo lo que toca la pantalla
+js/vendor/firebase/           Copia local de Firebase 12.19.0 (sin CDN; ver LEEME.md)
+firestore.rules               Reglas de seguridad para pegar en Firebase
+tests/simuladores.test.js     Pruebas de simuladores-logica.js
+```
+
+Para probarla en la computadora: `python3 -m http.server` en la raíz y abrir
+`http://localhost:8000/simuladores/` (abre en modo demostración si `firebase` está vacío).
 
 ## Estructura
 

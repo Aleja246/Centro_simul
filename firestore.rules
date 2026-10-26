@@ -1,0 +1,27 @@
+rules_version = '2';
+
+// Reglas de seguridad de la bitácora de simuladores.
+// Se copian en: Consola de Firebase → Firestore Database → Reglas → Publicar.
+//
+// Solo pueden leer y escribir las cuentas cuyo correo esté en la lista PERSONAL.
+// Para dar acceso a alguien: 1) crea su cuenta en Authentication → Usuarios,
+// 2) agrega su correo aquí (en minúsculas) y vuelve a publicar las reglas.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function esPersonal() {
+      return request.auth != null
+        && request.auth.token.email in [
+          "correo1@tec.mx",
+          "correo2@tec.mx"
+        ];
+    }
+
+    match /zonas/{id}       { allow read, write: if esPersonal(); }
+    match /simuladores/{id} { allow read, write: if esPersonal(); }
+
+    // El historial no se edita ni se borra desde la página: solo se agregan movimientos.
+    match /movimientos/{id} { allow read, create: if esPersonal(); }
+  }
+}
