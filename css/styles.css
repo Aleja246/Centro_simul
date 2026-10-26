@@ -272,3 +272,38 @@ legend { font-weight: 600; padding: 0; margin-bottom: 8px; }
 .kit-resumen { display: block; font-size: 0.8rem; font-weight: 400; color: var(--gris); }
 .kit summary { padding: 8px 0; }
 .cuenta { white-space: nowrap; flex: none; }
+
+/* ---------- Etiquetas QR imprimibles (etiquetas/) ---------- */
+.pagina-etiquetas { background: #e9edf2; }
+.pagina-etiquetas main { background: #fff; border-radius: 0 0 16px 16px; }
+.hojas { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 24px 8px 48px; overflow-x: auto; }
+.hoja {
+  flex: none; width: var(--pw); height: var(--ph); padding: var(--mt) 0 0 var(--ml);
+  background: #fff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18); overflow: hidden;
+  display: grid; grid-template-columns: repeat(var(--cols), var(--w)); grid-auto-rows: var(--h);
+  column-gap: var(--gap); align-content: start;
+}
+.etiqueta {
+  width: var(--w); height: var(--h); padding: calc(var(--h) * 0.06); overflow: hidden;
+  display: flex; align-items: center; gap: calc(var(--h) * 0.06);
+  font-family: Arial, Helvetica, sans-serif; color: #000; line-height: 1.12;
+}
+.con-bordes .etiqueta { outline: 0.2mm dashed #9aa5b1; outline-offset: -0.1mm; border-radius: 1.5mm; }
+.etiqueta-qr { flex: none; height: min(calc(var(--h) * 0.88), calc(var(--w) * 0.4)); width: min(calc(var(--h) * 0.88), calc(var(--w) * 0.4)); }
+.etiqueta-texto { min-width: 0; display: flex; flex-direction: column; gap: calc(var(--h) * 0.02); }
+.etiqueta p { margin: 0; }
+.etiqueta-id { font-size: min(calc(var(--h) * 0.2), calc(var(--w) * 0.075)); font-weight: 800; letter-spacing: 0.02em; }
+.etiqueta-nombre { font-size: min(calc(var(--h) * 0.115), calc(var(--w) * 0.044)); font-weight: 700; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.etiqueta-meta { font-size: min(calc(var(--h) * 0.09), calc(var(--w) * 0.034)); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.etiqueta-pie { font-size: min(calc(var(--h) * 0.075), calc(var(--w) * 0.028)); color: #444; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.etiqueta-caja .etiqueta-id { font-size: min(calc(var(--h) * 0.26), calc(var(--w) * 0.095)); }
+.etiqueta-caja .etiqueta-nombre { -webkit-line-clamp: 3; }
+
+@media print {
+  .no-imprimir { display: none !important; }
+  .pagina-etiquetas { background: #fff; }
+  .hojas { display: block; padding: 0; gap: 0; overflow: visible; }
+  .hoja { box-shadow: none; break-after: page; page-break-after: always; }
+  .hoja:last-child { break-after: auto; page-break-after: auto; }
+  .etiqueta { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}

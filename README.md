@@ -113,8 +113,57 @@ node --test
 - `tests/logica.test.js`: validaciones, folio, correo y enlaces.
 - `tests/llenado-malo.test.js`: cientos de formas de llenar mal cada formulario; **todas deben ser rechazadas**.
 - `tests/datos-ejemplo.js`: datos válidos que usan las pruebas.
+- `tests/inventario.test.js`: ubicaciones, reservas, accesorios, cajas, búsqueda y etiquetas.
 
 Si se cambia una regla en `js/logica.js`, se cambian o agregan pruebas en el mismo cambio.
+
+## Inventario y etiquetas QR
+
+Cada simulador, accesorio, equipo clínico y caja lleva una etiqueta con un QR. Al escanearla se abre
+`equipo/?id=EQ-347`: dónde está, si está reservado hoy o en la semana, y qué accesorios tiene y en qué caja y cuarto están.
+
+| Página | Para qué |
+|---|---|
+| `equipo/` | Buscador del inventario (por nombre, ID, kit o caja). |
+| `equipo/?id=EQ-347` | Ficha de un artículo. Si es simulador, lista sus accesorios por módulo; si es accesorio, a qué simulador pertenece. |
+| `equipo/?id=CJ-20` | Contenido de una caja. |
+| `etiquetas/` | Hoja imprimible de etiquetas (elige tamaño, qué imprimir y cuarto). **Borrador** hasta tener las hojas de etiquetas. |
+
+### Actualizar el inventario (sin programar)
+
+El Excel del inventario (OneDrive) es la fuente. Para publicar los cambios:
+
+1. En Excel: **Archivo → Crear una copia → Descargar una copia**.
+2. En GitHub, entrar a la carpeta **`datos/`** → **Add file → Upload files** → arrastrar el Excel → **Commit changes**.
+   No importa el nombre del archivo.
+3. Listo. En uno o dos minutos la acción **Actualizar inventario** (pestaña *Actions*) convierte el Excel,
+   regenera los QR y la página muestra los datos nuevos. Si algo falla, ahí aparece en rojo con el motivo;
+   los avisos (por ejemplo, un "Pertenece a" con un ID que no existe) salen en el resumen de la acción.
+
+> ⚠️ El repositorio es **público**: el Excel que se sube queda visible para cualquiera (incluye "Revisado por" y notas).
+> La página solo publica las columnas que necesita. Si no se quiere publicar el Excel, se puede correr el
+> conversor en una computadora y subir solo `datos/inventario.json` y `qr/equipos/`:
+> `pip install openpyxl "qrcode[pil]"` y luego `python3 scripts/excel_a_json.py RUTA_DEL_EXCEL.xlsx`.
+
+### Qué columnas del Excel se usan
+
+- **Inventario**: ID equipo, Nombre, Categoría, Marca, Zona del cuarto, Estado general, Caja real, Notas,
+  **Tipo (para QR)**, **Kit / módulo**, **Pertenece a (ID)**. Se buscan por nombre de encabezado, no por letra.
+  - Llevan QR propio: Simulador y Accesorio (prioridad 1), Equipo clínico (prioridad 2).
+    Consumibles y Electrónica / general se encuentran con el QR de su caja.
+- **Cajas** → sección "Cajas reales": la columna **Estante / lugar dentro del cuarto** aparece en la ficha.
+- **Reservas** (hoja opcional; si no existe, la ficha dice "las reservas todavía no están conectadas"):
+  encabezados `ID equipo | Fecha | Hora inicio | Hora fin | Actividad | Sala | Estado`.
+  Solo se publican las filas con Estado vacío o "Confirmada", de hoy en adelante.
+
+Cómo se ve cada cuarto en la página (por ejemplo "CuartodelaTortura") se cambia en `js/config.js` → `inventario.nombresCuartos`.
+Fotos opcionales: subir `fotos/EQ-347.jpg` (cuadrada, ~600 px) y aparece en la ficha.
+
+### Etiquetas
+
+`qr/equipos/<ID>.svg` se genera solo. Los QR llevan la dirección `…/equipo/?id=<ID>`: no caducan
+y no hay que reimprimirlos cuando cambia el inventario, solo cuando cambia el ID de un artículo o la dirección del sitio.
+Los tamaños de etiqueta están en `js/config.js` → `etiquetas` (medidas en mm).
 
 ## Publicar en GitHub Pages
 
@@ -144,6 +193,13 @@ css/styles.css                   Estilos (pensados para celular)
 tests/                           Pruebas automáticas
 scripts/generar_qr.py            Genera los QR
 qr/                              QR generados
+equipo/                          Ficha de escaneo y buscador del inventario
+etiquetas/                       Hoja imprimible de etiquetas QR
+js/inventario.js                 Funciones puras del inventario
+js/ficha.js, js/etiquetas.js     Pantalla de equipo/ y etiquetas/
+datos/inventario.json            Inventario publicado (lo genera el conversor)
+scripts/excel_a_json.py          Convierte el Excel en datos/inventario.json y qr/equipos/
+.github/workflows/               Acción que convierte el Excel al subirlo
 ```
 
 Notas para quien programe:
