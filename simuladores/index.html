@@ -35,6 +35,8 @@
       <symbol id="i-bajar" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
       <symbol id="i-descargar" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></symbol>
       <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-verificar" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 13l2 2 4-4"/></symbol>
+      <symbol id="i-excel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16"/></symbol>
     </defs>
   </svg>
 
@@ -46,12 +48,12 @@
       </div>
       <nav class="pestanas" id="pestanas" aria-label="Secciones" hidden>
         <button type="button" class="pestana" data-vista="plano"><svg class="i"><use href="#i-plano"/></svg><span>Plano</span></button>
-        <button type="button" class="pestana" data-vista="inventario"><svg class="i"><use href="#i-lista"/></svg><span>Simuladores</span></button>
-        <button type="button" class="pestana-leer" data-accion="leer" aria-label="Leer tarjeta NFC"><span class="leer-circulo"><svg class="i"><use href="#i-nfc"/></svg></span><span>Leer tarjeta</span></button>
+        <button type="button" class="pestana" data-vista="inventario"><svg class="i"><use href="#i-lista"/></svg><span>Inventario</span></button>
+        <button type="button" class="pestana-leer" data-accion="leer" aria-label="Leer tarjeta NFC"><span class="leer-circulo"><svg class="i"><use href="#i-nfc"/></svg></span><span data-texto-leer>Leer tarjeta</span></button>
         <button type="button" class="pestana" data-vista="historial"><svg class="i"><use href="#i-historial"/></svg><span>Historial</span></button>
         <button type="button" class="pestana" data-vista="ajustes"><svg class="i"><use href="#i-ajustes"/></svg><span>Ajustes</span></button>
       </nav>
-      <button type="button" class="boton-leer" data-accion="leer" id="boton-leer" hidden><svg class="i"><use href="#i-nfc"/></svg>Leer tarjeta</button>
+      <button type="button" class="boton-leer" data-accion="leer" id="boton-leer" hidden><svg class="i"><use href="#i-nfc"/></svg><span data-texto-leer>Leer tarjeta</span></button>
     </div>
   </header>
 
@@ -92,12 +94,13 @@
 
     <!-- Inventario -->
     <section id="v-inventario" class="vista" hidden>
-      <div class="encabezado"><h2>Simuladores</h2><span class="cuenta" id="inv-n">0</span>
-        <button type="button" class="boton-chico boton-chico-primario empuja" data-accion="nuevo"><svg class="i"><use href="#i-mas"/></svg>Nuevo simulador</button></div>
+      <div class="encabezado"><h2>Inventario</h2><span class="cuenta" id="inv-n">0</span>
+        <span class="pequeno empuja">Los equipos se dan de alta en el Excel.</span></div>
       <div class="filtros">
-        <label class="buscar"><span class="oculto">Buscar simulador</span><svg class="i"><use href="#i-buscar"/></svg><input id="q-inv" type="search" placeholder="Nombre, código o categoría" autocomplete="off"></label>
-        <div class="chips" id="categorias"></div>
+        <div class="chips" id="alcance"></div>
+        <label class="buscar"><span class="oculto">Buscar en el inventario</span><svg class="i"><use href="#i-buscar"/></svg><input id="q-inv" type="search" placeholder="Nombre, ID, categoría o caja" autocomplete="off"></label>
       </div>
+      <div class="chips" id="categorias"></div>
       <div id="inventario"></div>
     </section>
 
@@ -110,7 +113,8 @@
           <button type="button" class="chip" data-tipo="todos" aria-pressed="true">Todos</button>
           <button type="button" class="chip" data-tipo="salida" aria-pressed="false">Salidas</button>
           <button type="button" class="chip" data-tipo="regreso" aria-pressed="false">Regresos</button>
-          <button type="button" class="chip" data-tipo="reubicacion" aria-pressed="false">Cambios de lugar</button>
+          <button type="button" class="chip" data-tipo="reubicacion" aria-pressed="false">Cambios de cuarto</button>
+          <button type="button" class="chip" data-tipo="verificacion" aria-pressed="false">Verificaciones</button>
           <button type="button" class="chip" data-tipo="revision" aria-pressed="false">Revisiones</button>
         </div>
         <label class="buscar"><span class="oculto">Buscar en el historial</span><svg class="i"><use href="#i-buscar"/></svg><input id="q-hist" type="search" placeholder="Simulador, persona o zona" autocomplete="off"></label>

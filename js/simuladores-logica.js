@@ -385,7 +385,8 @@ export function describirMovimiento(m) {
     case "verificacion": {
       const v = m.verificacion || {};
       const falta = (v.material || []).filter(Boolean);
-      return [v.estadoGeneral, v.resultado && `resultado: ${v.resultado}`, Number.isFinite(v.piezasDanadas) && v.piezasDanadas > 0 && `${v.piezasDanadas} piezas dañadas`, falta.length && `falta: ${falta.join(", ")}`, v.comentarios].filter(Boolean).join(" · ");
+      const piezas = Number.isFinite(v.piezasDanadas) && v.piezasDanadas > 0 && (v.piezasDanadas === 1 ? "1 pieza dañada" : `${v.piezasDanadas} piezas dañadas`);
+      return [v.estadoGeneral, v.resultado && `resultado: ${v.resultado}`, piezas, falta.length && `falta: ${falta.join(", ")}`, v.comentarios].filter(Boolean).join(" · ");
     }
     case "revision":
       return `Falla resuelta${m.nota ? `: ${m.nota}` : ""}`;

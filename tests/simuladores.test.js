@@ -300,6 +300,7 @@ test("describirMovimiento arma frases cortas", () => {
   assert.equal(describirMovimiento({ tipo: "revision", nota: "Falta pieza" }), "Falla resuelta: Falta pieza");
   assert.equal(describirMovimiento({ tipo: "verificacion", verificacion: { estadoGeneral: "No funciona", resultado: "No pasa", piezasDanadas: 3, material: ["Campana", "", "Membrana"], comentarios: "Manguera suelta" } }),
     "No funciona · resultado: No pasa · 3 piezas dañadas · falta: Campana, Membrana · Manguera suelta");
+  assert.equal(describirMovimiento({ tipo: "verificacion", verificacion: { estadoGeneral: "Funciona", piezasDanadas: 1 } }), "Funciona · 1 pieza dañada");
 });
 
 test("csvMovimientos: BOM, comillas escapadas, \\r\\n, orden cronológico y estado del Excel", () => {
