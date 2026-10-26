@@ -236,8 +236,9 @@ button.fila:hover { background: var(--color-suave); }
 .zona-ed:first-child { border-top: 0; }
 .zona-ed .color { width: 44px; height: 44px; border-radius: 10px; border: 3px solid #fff; box-shadow: 0 0 0 1px var(--linea); background: var(--z); }
 .zona-ed input { min-width: 0; min-height: 44px; border-width: 1px; }
-.zona-ed .herramientas { grid-column: 2; display: flex; flex-wrap: wrap; align-items: center; gap: 2px; }
-.zona-ed select { width: auto; min-height: 44px; border-width: 1px; margin-right: auto; }
+.zona-ed .herramientas { grid-column: 2; display: flex; align-items: center; gap: 2px; }
+.zona-ed select { flex: 0 1 140px; width: auto; min-width: 0; min-height: 44px; border-width: 1px; margin-right: auto; }
+.zona-ed .icono-btn { width: 40px; }
 .paleta { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; }
 .paleta button { width: 36px; height: 36px; border-radius: 8px; border: 3px solid #fff; box-shadow: 0 0 0 1px var(--linea); background: var(--z); }
 .paleta button[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--color-texto); }
@@ -319,7 +320,7 @@ details.otra-accion[open] summary { margin-bottom: 8px; }
 .elegir .codigo { margin-left: auto; }
 .bitacora .opcion { font-weight: 600; }
 
-.mensaje { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(100px + env(safe-area-inset-bottom, 0px)); z-index: 200; display: flex; align-items: center; gap: 10px; max-width: calc(100vw - 32px); padding: 12px 18px; border-radius: 12px; background: #13202f; color: #fff; font-weight: 700; box-shadow: 0 10px 30px rgba(0, 20, 40, .3); }
+.mensaje { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(100px + env(safe-area-inset-bottom, 0px)); z-index: 200; display: flex; align-items: center; gap: 10px; width: max-content; max-width: calc(100vw - 32px); padding: 12px 18px; border-radius: 12px; background: #13202f; color: #fff; font-weight: 700; box-shadow: 0 10px 30px rgba(0, 20, 40, .3); }
 .mensaje.malo { background: var(--color-error); }
 .mensaje .i { width: 20px; height: 20px; }
 dialog .mensaje { bottom: calc(24px + env(safe-area-inset-bottom, 0px)); }
