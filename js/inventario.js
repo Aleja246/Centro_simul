@@ -225,3 +225,22 @@ export function etiquetasA(idx, filtro) {
   }
   return salida;
 }
+
+// ---------- NFC ----------
+
+// Dirección que se graba en la etiqueta NFC (o en el QR) de un artículo o caja.
+// paginaActual: la dirección de cualquier página del sitio que esté un nivel abajo de la raíz (p. ej. .../nfc/).
+export function urlFicha(paginaActual, id) {
+  return new URL(`../equipo/?id=${encodeURIComponent(id)}`, paginaActual).href;
+}
+
+// Lee el ID de una dirección grabada en una etiqueta; null si no es de este sitio.
+export function idDeUrl(url) {
+  try {
+    const u = new URL(url);
+    if (!/\/equipo\/$/.test(u.pathname)) return null;
+    return (u.searchParams.get("id") ?? "").trim().toUpperCase() || null;
+  } catch {
+    return null;
+  }
+}

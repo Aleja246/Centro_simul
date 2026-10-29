@@ -127,6 +127,7 @@ Cada simulador, accesorio, equipo clínico y caja lleva una etiqueta con un QR. 
 | `equipo/` | Buscador del inventario (por nombre, ID, kit o caja). |
 | `equipo/?id=EQ-347` | Ficha de un artículo. Si es simulador, lista sus accesorios por módulo; si es accesorio, a qué simulador pertenece. |
 | `equipo/?id=CJ-20` | Contenido de una caja. |
+| `nfc/` | Grabar las etiquetas NFC: en Chrome de Android, botón **Grabar** y acercar la etiqueta. En iPhone, **Copiar enlace** y grabarlo con la app NFC Tools. Lleva la cuenta de las ya grabadas en ese celular. |
 | `etiquetas/` | Hoja imprimible de etiquetas (elige tamaño, qué imprimir y cuarto). **Borrador** hasta tener las hojas de etiquetas. |
 
 ### Actualizar el inventario (sin programar)
@@ -159,7 +160,11 @@ El Excel del inventario (OneDrive) es la fuente. Para publicar los cambios:
 Cómo se ve cada cuarto en la página (por ejemplo "CuartodelaTortura") se cambia en `js/config.js` → `inventario.nombresCuartos`.
 Fotos opcionales: subir `fotos/EQ-347.jpg` (cuadrada, ~600 px) y aparece en la ficha.
 
-### Etiquetas
+### Etiquetas NFC
+
+Cada etiqueta guarda solo la dirección `…/equipo/?id=<ID>` (cabe en cualquier NTAG213/215/216). Se graba una vez y no hay que regrabarla cuando cambia el inventario. En equipos de metal usar etiquetas **anti-metal** (una normal pegada sobre metal no se lee). Para leerlas: Android con NFC activado; iPhone XS o más reciente con la pantalla desbloqueada. Conviene que la etiqueta lleve impreso el ID (y, si se puede, el QR como respaldo para celulares sin NFC).
+
+### Etiquetas impresas (QR)
 
 `qr/equipos/<ID>.svg` se genera solo. Los QR llevan la dirección `…/equipo/?id=<ID>`: no caducan
 y no hay que reimprimirlos cuando cambia el inventario, solo cuando cambia el ID de un artículo o la dirección del sitio.

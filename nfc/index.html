@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Grabar etiquetas NFC · Centro de Simulación Clínica</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body class="pagina-inventario">
+  <main>
+    <a class="volver" href="../equipo/">← Inventario</a>
+    <h1>Grabar etiquetas NFC</h1>
+
+    <div id="con-nfc" hidden>
+      <p class="tenue">Toca <strong>Grabar</strong> en un equipo y acerca la etiqueta a la parte de atrás del celular.</p>
+      <button type="button" id="leer" class="boton boton-secundario">Leer una etiqueta para revisarla</button>
+      <p id="lectura" class="aviso" hidden aria-live="polite"></p>
+    </div>
+
+    <div id="sin-nfc" class="aviso" hidden>
+      <p><strong>Este navegador no puede grabar etiquetas.</strong> Solo Chrome en Android lo permite.
+        En iPhone (o en otro navegador) usa la app gratuita <strong>NFC Tools</strong>:</p>
+      <ol>
+        <li>Aquí abajo, toca <strong>Copiar enlace</strong> del equipo.</li>
+        <li>En NFC Tools: <em>Escribir → Agregar un registro → URL / URI</em> y pega el enlace (sin repetir “https://”).</li>
+        <li>Toca <em>Escribir</em> y acerca la etiqueta.</li>
+      </ol>
+    </div>
+
+    <form id="filtros" class="filtros-nfc">
+      <div class="campo">
+        <label for="buscar">Buscar</label>
+        <input type="search" id="buscar" placeholder="Ej. PROMPT, EQ-347, CJ-20" autocomplete="off">
+      </div>
+      <details class="kit">
+      <summary>Filtros</summary>
+      <fieldset style="margin-top:12px">
+        <legend>Qué mostrar</legend>
+        <label class="opcion"><input type="checkbox" id="prioridad1" checked> Simuladores y accesorios</label>
+        <label class="opcion"><input type="checkbox" id="prioridad2"> Equipo clínico</label>
+        <label class="opcion"><input type="checkbox" id="cajas"> Cajas y estantes</label>
+        <label class="opcion"><input type="checkbox" id="ocultarGrabadas"> Ocultar las ya grabadas</label>
+      </fieldset>
+      <div class="campo">
+        <label for="cuarto">Cuarto</label>
+        <select id="cuarto"><option value="">Todos</option></select>
+      </div>
+      </details>
+    </form>
+
+    <p id="progreso" class="fuerte" aria-live="polite"></p>
+    <ul id="lista" class="lista-nfc"></ul>
+  </main>
+  <script type="module" src="../js/nfc.js"></script>
+</body>
+</html>

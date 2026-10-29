@@ -307,3 +307,22 @@ legend { font-weight: 600; padding: 0; margin-bottom: 8px; }
   .hoja:last-child { break-after: auto; page-break-after: auto; }
   .etiqueta { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 }
+
+/* ---------- Grabar etiquetas NFC (nfc/) ---------- */
+.lista-nfc { list-style: none; margin: 0; padding: 0; }
+.lista-nfc li { padding: 12px 0; border-bottom: 1px solid var(--color-borde); }
+.lista-nfc li.grabada .fuerte { color: var(--verde); }
+.botones-nfc { display: flex; gap: 8px; margin-top: 8px; }
+.boton-nfc {
+  flex: 1; min-height: 48px; padding: 8px 12px; border: 2px solid var(--color-primario); border-radius: 8px;
+  background: var(--color-primario); color: #fff; font: inherit; font-weight: 700; cursor: pointer;
+}
+.boton-nfc.secundario { background: transparent; color: var(--color-primario); }
+.boton-nfc:disabled { opacity: 0.6; }
+.estado-nfc:empty { display: none; }
+.estado-nfc { margin-top: 8px !important; font-weight: 600; font-size: 0.9rem; }
+.estado-nfc.esperando { color: var(--ambar); }
+.estado-nfc.ok { color: var(--verde); }
+.estado-nfc.error { color: var(--rojo); }
+#leer { margin-bottom: var(--espacio); min-height: 52px; font-size: 1rem; }
+.pagina-inventario ol { margin: 8px 0 0; padding-left: 20px; }

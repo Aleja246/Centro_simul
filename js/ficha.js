@@ -299,6 +299,7 @@ function vistaBuscador(idx, textoInicial = "", aviso = "") {
     el("label", { for: "buscar" }, "Busca un simulador, accesorio o caja"),
     el("div", { class: "campo-buscar" }, icono("buscar"), entrada),
     resultados,
+    el("p", { class: "tenue", style: "margin-top:16px" }, "Personal del CSC: ", el("a", { href: "../nfc/" }, "grabar etiquetas NFC"), " · ", el("a", { href: "../etiquetas/" }, "imprimir etiquetas")),
   );
 }
 

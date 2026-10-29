@@ -25,7 +25,7 @@ function etiquetaArticulo(a) {
       el("p", { class: "etiqueta-id" }, a.id),
       el("p", { class: "etiqueta-nombre" }, a.nombre),
       el("p", { class: "etiqueta-meta" }, a.pertenece ? `Va con ${a.pertenece}` : a.kit || nombreCuarto(a.cuarto, CUARTOS)),
-      el("p", { class: "etiqueta-pie" }, "CSC · Escanea: ubicación y reservas"),
+      el("p", { class: "etiqueta-pie" }, "CSC · Acerca tu celular o escanea"),
     ),
   );
 }
@@ -37,7 +37,7 @@ function etiquetaCaja(c) {
       el("p", { class: "etiqueta-id" }, c.id),
       el("p", { class: "etiqueta-nombre" }, c.contenido || "Caja"),
       el("p", { class: "etiqueta-meta" }, (c.cuartos ?? []).map((x) => nombreCuarto(x, CUARTOS)).join(" / ")),
-      el("p", { class: "etiqueta-pie" }, "CSC · Escanea: contenido de la caja"),
+      el("p", { class: "etiqueta-pie" }, "CSC · Acerca tu celular: contenido"),
     ),
   );
 }

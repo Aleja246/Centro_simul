@@ -163,3 +163,14 @@ test("el JSON real del repo tiene la forma esperada", () => {
     if (a.tipo === "Consumible" || a.tipo === "Electrónica / general") assert.equal(a.qr, null);
   }
 });
+
+test("NFC: dirección que se graba y lectura del ID", async () => {
+  const { urlFicha, idDeUrl } = await import("../js/inventario.js");
+  const pagina = "https://aleja246.github.io/Centro_simul/nfc/";
+  assert.equal(urlFicha(pagina, "EQ-347"), "https://aleja246.github.io/Centro_simul/equipo/?id=EQ-347");
+  assert.equal(urlFicha(pagina + "?cuarto=x", "CJ-10.1"), "https://aleja246.github.io/Centro_simul/equipo/?id=CJ-10.1");
+  assert.equal(idDeUrl("https://aleja246.github.io/Centro_simul/equipo/?id=eq-347"), "EQ-347");
+  assert.equal(idDeUrl("https://ejemplo.com/otra/?id=EQ-1"), null);
+  assert.equal(idDeUrl("no es url"), null);
+  assert.equal(idDeUrl("https://aleja246.github.io/Centro_simul/equipo/"), null);
+});
