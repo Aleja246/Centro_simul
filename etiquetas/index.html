@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Etiquetas QR · Centro de Simulación Clínica</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style id="estilo-pagina"></style>
+</head>
+<body class="pagina-etiquetas">
+  <main class="no-imprimir">
+    <h1>Etiquetas QR del inventario</h1>
+    <p class="aviso"><strong>Borrador.</strong> Los tamaños son de ejemplo hasta tener las hojas de etiquetas.
+      Antes de gastar etiquetas, imprime una hoja en papel normal y ponla sobre la hoja de etiquetas a contraluz.</p>
+
+    <form id="opciones" class="opciones-etiquetas">
+      <div class="campo">
+        <label for="tamano">Tamaño de etiqueta</label>
+        <select id="tamano"></select>
+      </div>
+      <fieldset>
+        <legend>Qué imprimir</legend>
+        <label class="opcion"><input type="checkbox" id="prioridad1" checked> Simuladores y accesorios (prioridad 1)</label>
+        <label class="opcion"><input type="checkbox" id="prioridad2"> Equipo clínico (prioridad 2)</label>
+        <label class="opcion"><input type="checkbox" id="cajas"> Cajas y estantes</label>
+      </fieldset>
+      <div class="campo">
+        <label for="cuarto">Cuarto</label>
+        <select id="cuarto"><option value="">Todos</option></select>
+      </div>
+      <div class="campo">
+        <label for="ids">Solo estos IDs (opcional, para reimprimir)</label>
+        <input id="ids" placeholder="Ej. EQ-347, EQ-303, CJ-20">
+      </div>
+      <label class="opcion"><input type="checkbox" id="bordes" checked> Marcar bordes (para probar en papel)</label>
+      <p id="resumen" class="fuerte" aria-live="polite"></p>
+      <button type="button" id="imprimir" class="boton boton-primario">Imprimir</button>
+    </form>
+  </main>
+
+  <div id="hojas" class="hojas"></div>
+  <script type="module" src="../js/etiquetas.js"></script>
+</body>
+</html>
