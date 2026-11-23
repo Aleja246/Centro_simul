@@ -14,6 +14,7 @@ import {
   mismoKit,
   contenidoCaja,
   buscar,
+  urlPrestamo,
 } from "./inventario.js";
 
 const RAIZ = "../";
@@ -170,6 +171,16 @@ function detalles(articulo) {
   return seccion("Detalles", el("dl", { class: "detalles" }, filas.flatMap(([k, v]) => [el("dt", {}, k), el("dd", {}, v)])));
 }
 
+function seccionPrestamo(id) {
+  const plantilla = CONFIG.inventario.urlFormPrestamo;
+  if (!urlPrestamo(plantilla, id, "Tomar")) return null;
+  const boton = (accion, clase) => el("a", { class: `boton ${clase}`, href: urlPrestamo(plantilla, id, accion), target: "_blank", rel: "noopener" }, accion);
+  return seccion("Préstamo",
+    el("p", { class: "tenue" }, "Regístralo al tomarlo y al devolverlo. Se abre un formulario del Tec con tu cuenta."),
+    el("div", { class: "botones-nfc" }, boton("Tomar", "boton-primario"), boton("Devolver", "boton-secundario")),
+  );
+}
+
 // ---------- Fichas ----------
 
 function fichaArticulo(a, idx, ahora) {
@@ -187,6 +198,7 @@ function fichaArticulo(a, idx, ahora) {
       ),
     ),
     seccionReserva(reserva, hoy),
+    seccionPrestamo(a.id),
   ];
 
   if (padre) {
