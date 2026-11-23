@@ -20,6 +20,9 @@ export const CONFIG = {
       ClosetFinal: "Closet final",
     },
     carpetaFotos: "fotos/", // opcional: fotos/EQ-347.jpg se muestra en la ficha
+    // Microsoft Form de préstamos. Pega aquí el "vínculo rellenado previamente" generado con
+    // Equipo = EQ-000 y Acción = Tomar. Vacío = no se muestran los botones Tomar / Devolver.
+    urlFormPrestamo: "",
   },
   // Tamaños de etiqueta para etiquetas/ (mm). POR DEFINIR cuando se compren las hojas de etiquetas.
   etiquetas: [

@@ -174,3 +174,12 @@ test("NFC: dirección que se graba y lectura del ID", async () => {
   assert.equal(idDeUrl("no es url"), null);
   assert.equal(idDeUrl("https://aleja246.github.io/Centro_simul/equipo/"), null);
 });
+
+test("préstamos: enlace del Form con equipo y acción", async () => {
+  const { urlPrestamo } = await import("../js/inventario.js");
+  const pl = "https://forms.office.com/Pages/ResponsePage.aspx?id=abc&r1=EQ-000&r2=%22Tomar%22";
+  assert.equal(urlPrestamo(pl, "EQ-347", "Tomar"), "https://forms.office.com/Pages/ResponsePage.aspx?id=abc&r1=EQ-347&r2=%22Tomar%22");
+  assert.equal(urlPrestamo(pl, "CJ-10.1", "Devolver"), "https://forms.office.com/Pages/ResponsePage.aspx?id=abc&r1=CJ-10.1&r2=%22Devolver%22");
+  assert.equal(urlPrestamo("", "EQ-1", "Tomar"), null);
+  assert.equal(urlPrestamo("https://forms.office.com/x", "EQ-1", "Tomar"), null);
+});

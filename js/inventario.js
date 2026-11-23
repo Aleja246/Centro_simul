@@ -244,3 +244,14 @@ export function idDeUrl(url) {
     return null;
   }
 }
+
+// ---------- Préstamos (Microsoft Forms) ----------
+
+// Arma el enlace del Form con el equipo y la acción ya llenados.
+// plantilla: enlace pre-rellenado con Equipo = "EQ-000" y Acción = "Tomar". accion: "Tomar" | "Devolver".
+export function urlPrestamo(plantilla, id, accion) {
+  if (!plantilla || !plantilla.includes("EQ-000")) return null;
+  let url = plantilla.replace(/EQ-000/g, encodeURIComponent(id));
+  if (accion !== "Tomar") url = url.replace(/Tomar/g, encodeURIComponent(accion));
+  return url;
+}
