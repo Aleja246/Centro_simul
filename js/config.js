@@ -16,6 +16,7 @@ export const CONFIG = {
     // Cómo se muestra cada cuarto (izquierda: tal cual está en el Excel). POR DEFINIR nombres oficiales.
     nombresCuartos: {
       "Taller de mantenimiento y consumibles": "Taller de mantenimiento y consumibles",
+      TallerSantaClaus: "Taller de mantenimiento y consumibles",
       CuartodelaTortura: "Cuarto de la tortura",
       ClosetFinal: "Closet final",
     },
