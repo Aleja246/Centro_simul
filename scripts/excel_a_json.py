@@ -47,7 +47,29 @@ COLUMNAS = {
     "kit": "Kit / módulo",
     "pertenece": "Pertenece a (ID)",
 }
-TIPOS = ["Simulador", "Accesorio", "Equipo clínico", "Electrónica / general", "Consumible"]
+TIPOS = ["Simulador", "Accesorio", "Equipo clínico", "Electrónica / general", "Mobiliario", "Consumible"]
+
+# Si el Excel no trae "Tipo (para QR)", "Kit / módulo" o "Pertenece a (ID)" (formato original del inventario),
+# se usa la clasificación guardada en datos/clasificacion.json, y para artículos nuevos el tipo sale de la categoría.
+CLASIFICACION = RAIZ / "datos" / "clasificacion.json"
+TIPO_POR_CATEGORIA = {
+    "Simulador de paciente (maniquí)": "Simulador",
+    "Simulador de tareas (brazo IV, intubación, etc.)": "Simulador",
+    "Simulador de RCP": "Simulador",
+    "Monitor de signos vitales": "Equipo clínico",
+    "Equipo de diagnóstico manual": "Equipo clínico",
+    "Bomba de infusión / jeringa": "Equipo clínico",
+    "Computadora / tablet / controlador": "Electrónica / general",
+    "Mobiliario clínico": "Mobiliario",
+    "Cables, accesorios y consumibles": "Consumible",
+}
+
+
+def cargar_clasificacion():
+    try:
+        return json.loads(CLASIFICACION.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
 PRIORIDAD_QR = {"Simulador": 1, "Accesorio": 1, "Equipo clínico": 2}
 PATRON_CAJA = re.compile(r"^(CJ|EST)-[\w.]+$")
 
@@ -83,7 +105,9 @@ def leer_inventario(libro, avisos):
     if "Inventario" not in libro.sheetnames:
         sys.exit('El Excel no tiene la hoja "Inventario".')
     hoja = libro["Inventario"]
-    requeridas = [COLUMNAS[k] for k in ("id", "nombre", "cuarto", "guardado", "tipo")]
+    requeridas = [COLUMNAS[k] for k in ("id", "nombre")]
+    guardada = cargar_clasificacion()
+    nuevos_por_categoria = 0
     fila_enc, idx = leer_tabla(hoja, requeridas)
     if not fila_enc:
         sys.exit("En la hoja Inventario faltan columnas: " + ", ".join(requeridas))
@@ -93,12 +117,22 @@ def leer_inventario(libro, avisos):
         dato = {k: texto(fila[idx[v]]) if v in idx and idx[v] < len(fila) else "" for k, v in COLUMNAS.items()}
         if not dato["id"] or not dato["nombre"]:
             continue  # IDs ya puestos pero sin artículo registrado
+        previa = guardada.get(dato["id"].upper(), {})
+        if not dato["kit"]:
+            dato["kit"] = previa.get("kit", "")
+        if not dato["pertenece"]:
+            dato["pertenece"] = previa.get("pertenece", "")
         tipo = dato["tipo"]
         if tipo and tipo not in TIPOS:
             avisos.append(f'{dato["id"]}: tipo "{tipo}" no es de la lista; se trata como vacío.')
             tipo = ""
         if not tipo:
-            avisos.append(f'{dato["id"]} ({dato["nombre"]}): sin "Tipo (para QR)".')
+            tipo = previa.get("tipo", "")
+        if not tipo and dato["categoria"] in TIPO_POR_CATEGORIA:
+            tipo = TIPO_POR_CATEGORIA[dato["categoria"]]
+            nuevos_por_categoria += 1
+        if not tipo:
+            avisos.append(f'{dato["id"]} ({dato["nombre"]}): sin tipo ni categoría; no lleva QR.')
         guardado = dato["guardado"]
         articulos.append({
             "id": dato["id"].upper(),
@@ -116,6 +150,9 @@ def leer_inventario(libro, avisos):
             "qr": PRIORIDAD_QR.get(tipo),
         })
 
+    if nuevos_por_categoria:
+        avisos.append(f"{nuevos_por_categoria} artículos nuevos tomaron su tipo de la Categoría "
+                      "(revisa en la ficha si alguno es accesorio de un simulador).")
     ids = {a["id"] for a in articulos}
     repetidos = {a["id"] for a in articulos if sum(b["id"] == a["id"] for b in articulos) > 1}
     for r in sorted(repetidos):

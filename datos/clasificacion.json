@@ -1,0 +1,1199 @@
+{
+"EQ-001": {
+"tipo": "Equipo clínico"
+},
+"EQ-002": {
+"tipo": "Equipo clínico"
+},
+"EQ-003": {
+"tipo": "Equipo clínico"
+},
+"EQ-004": {
+"tipo": "Equipo clínico"
+},
+"EQ-005": {
+"tipo": "Equipo clínico"
+},
+"EQ-006": {
+"tipo": "Equipo clínico"
+},
+"EQ-007": {
+"tipo": "Equipo clínico"
+},
+"EQ-008": {
+"tipo": "Equipo clínico"
+},
+"EQ-009": {
+"tipo": "Equipo clínico"
+},
+"EQ-010": {
+"tipo": "Equipo clínico"
+},
+"EQ-011": {
+"tipo": "Equipo clínico"
+},
+"EQ-012": {
+"tipo": "Equipo clínico"
+},
+"EQ-013": {
+"tipo": "Equipo clínico"
+},
+"EQ-014": {
+"tipo": "Equipo clínico"
+},
+"EQ-015": {
+"kit": "BabySIM",
+"tipo": "Accesorio"
+},
+"EQ-016": {
+"kit": "BabySIM",
+"tipo": "Accesorio"
+},
+"EQ-017": {
+"kit": "BabySIM",
+"tipo": "Accesorio"
+},
+"EQ-018": {
+"kit": "BabySIM",
+"tipo": "Accesorio"
+},
+"EQ-019": {
+"tipo": "Consumible"
+},
+"EQ-020": {
+"tipo": "Consumible"
+},
+"EQ-021": {
+"tipo": "Consumible"
+},
+"EQ-022": {
+"tipo": "Consumible"
+},
+"EQ-023": {
+"tipo": "Consumible"
+},
+"EQ-024": {
+"tipo": "Consumible"
+},
+"EQ-025": {
+"tipo": "Consumible"
+},
+"EQ-026": {
+"tipo": "Simulador"
+},
+"EQ-027": {
+"tipo": "Consumible"
+},
+"EQ-028": {
+"tipo": "Consumible"
+},
+"EQ-029": {
+"tipo": "Consumible"
+},
+"EQ-030": {
+"tipo": "Consumible"
+},
+"EQ-031": {
+"tipo": "Consumible"
+},
+"EQ-032": {
+"tipo": "Consumible"
+},
+"EQ-033": {
+"tipo": "Consumible"
+},
+"EQ-034": {
+"tipo": "Consumible"
+},
+"EQ-035": {
+"tipo": "Consumible"
+},
+"EQ-036": {
+"tipo": "Consumible"
+},
+"EQ-037": {
+"tipo": "Consumible"
+},
+"EQ-038": {
+"tipo": "Consumible"
+},
+"EQ-039": {
+"tipo": "Consumible"
+},
+"EQ-040": {
+"tipo": "Consumible"
+},
+"EQ-041": {
+"tipo": "Consumible"
+},
+"EQ-042": {
+"tipo": "Consumible"
+},
+"EQ-043": {
+"tipo": "Consumible"
+},
+"EQ-044": {
+"tipo": "Consumible"
+},
+"EQ-045": {
+"tipo": "Consumible"
+},
+"EQ-046": {
+"tipo": "Consumible"
+},
+"EQ-047": {
+"tipo": "Consumible"
+},
+"EQ-048": {
+"tipo": "Consumible"
+},
+"EQ-049": {
+"tipo": "Consumible"
+},
+"EQ-050": {
+"tipo": "Consumible"
+},
+"EQ-051": {
+"tipo": "Consumible"
+},
+"EQ-052": {
+"tipo": "Consumible"
+},
+"EQ-053": {
+"tipo": "Consumible"
+},
+"EQ-054": {
+"tipo": "Consumible"
+},
+"EQ-055": {
+"tipo": "Accesorio"
+},
+"EQ-056": {
+"kit": "Auscultation Simulator (Gaumard)",
+"tipo": "Simulador"
+},
+"EQ-057": {
+"kit": "Auscultation Simulator (Gaumard)",
+"tipo": "Simulador"
+},
+"EQ-058": {
+"kit": "Auscultation Simulator (Gaumard)",
+"tipo": "Simulador"
+},
+"EQ-059": {
+"kit": "Auscultation Simulator (Gaumard)",
+"tipo": "Accesorio"
+},
+"EQ-060": {
+"kit": "Auscultation Simulator (Gaumard)",
+"tipo": "Accesorio"
+},
+"EQ-061": {
+"kit": "Auscultation Simulator (Gaumard)",
+"tipo": "Accesorio"
+},
+"EQ-062": {
+"kit": "Auscultation Simulator (Gaumard)",
+"tipo": "Accesorio"
+},
+"EQ-063": {
+"kit": "Auscultation Simulator (Gaumard)",
+"tipo": "Accesorio"
+},
+"EQ-064": {
+"kit": "Auscultation Simulator (Gaumard)",
+"tipo": "Accesorio"
+},
+"EQ-065": {
+"kit": "Auscultation Simulator (Gaumard)",
+"tipo": "Accesorio"
+},
+"EQ-066": {
+"tipo": "Simulador"
+},
+"EQ-067": {
+"tipo": "Simulador"
+},
+"EQ-068": {
+"tipo": "Simulador"
+},
+"EQ-069": {
+"tipo": "Simulador"
+},
+"EQ-070": {
+"tipo": "Simulador"
+},
+"EQ-071": {
+"tipo": "Consumible"
+},
+"EQ-072": {
+"tipo": "Consumible"
+},
+"EQ-073": {
+"tipo": "Consumible"
+},
+"EQ-074": {
+"tipo": "Consumible"
+},
+"EQ-075": {
+"tipo": "Consumible"
+},
+"EQ-076": {
+"tipo": "Consumible"
+},
+"EQ-077": {
+"tipo": "Consumible"
+},
+"EQ-078": {
+"tipo": "Consumible"
+},
+"EQ-079": {
+"tipo": "Consumible"
+},
+"EQ-080": {
+"tipo": "Consumible"
+},
+"EQ-081": {
+"kit": "Auscultation Simulator (Gaumard)",
+"tipo": "Simulador"
+},
+"EQ-082": {
+"tipo": "Electrónica / general"
+},
+"EQ-083": {
+"tipo": "Electrónica / general"
+},
+"EQ-084": {
+"tipo": "Electrónica / general"
+},
+"EQ-085": {
+"tipo": "Electrónica / general"
+},
+"EQ-086": {
+"tipo": "Electrónica / general"
+},
+"EQ-087": {
+"tipo": "Electrónica / general"
+},
+"EQ-088": {
+"tipo": "Electrónica / general"
+},
+"EQ-089": {
+"tipo": "Electrónica / general"
+},
+"EQ-090": {
+"tipo": "Electrónica / general"
+},
+"EQ-091": {
+"tipo": "Electrónica / general"
+},
+"EQ-092": {
+"tipo": "Electrónica / general"
+},
+"EQ-093": {
+"kit": "Repuestos Laerdal",
+"tipo": "Accesorio"
+},
+"EQ-094": {
+"kit": "Repuestos Laerdal",
+"tipo": "Accesorio"
+},
+"EQ-095": {
+"kit": "Repuestos Laerdal",
+"tipo": "Accesorio"
+},
+"EQ-096": {
+"kit": "Repuestos Laerdal",
+"tipo": "Accesorio"
+},
+"EQ-097": {
+"kit": "Brazo de venopunción",
+"tipo": "Accesorio"
+},
+"EQ-098": {
+"kit": "Brazo de venopunción",
+"tipo": "Accesorio"
+},
+"EQ-099": {
+"kit": "Brazo de venopunción",
+"tipo": "Accesorio"
+},
+"EQ-100": {
+"kit": "Brazo de venopunción",
+"tipo": "Accesorio"
+},
+"EQ-101": {
+"kit": "Brazo de venopunción",
+"tipo": "Accesorio"
+},
+"EQ-102": {
+"kit": "Brazo de venopunción",
+"tipo": "Accesorio"
+},
+"EQ-103": {
+"tipo": "Electrónica / general"
+},
+"EQ-104": {
+"tipo": "Electrónica / general"
+},
+"EQ-105": {
+"tipo": "Electrónica / general"
+},
+"EQ-106": {
+"tipo": "Consumible"
+},
+"EQ-107": {
+"tipo": "Electrónica / general"
+},
+"EQ-108": {
+"tipo": "Electrónica / general"
+},
+"EQ-109": {
+"tipo": "Electrónica / general"
+},
+"EQ-110": {
+"tipo": "Electrónica / general"
+},
+"EQ-111": {
+"tipo": "Electrónica / general"
+},
+"EQ-112": {
+"tipo": "Electrónica / general"
+},
+"EQ-113": {
+"tipo": "Electrónica / general"
+},
+"EQ-114": {
+"tipo": "Consumible"
+},
+"EQ-115": {
+"tipo": "Electrónica / general"
+},
+"EQ-116": {
+"tipo": "Electrónica / general"
+},
+"EQ-117": {
+"tipo": "Electrónica / general"
+},
+"EQ-118": {
+"tipo": "Electrónica / general"
+},
+"EQ-119": {
+"tipo": "Electrónica / general"
+},
+"EQ-120": {
+"tipo": "Electrónica / general"
+},
+"EQ-121": {
+"tipo": "Electrónica / general"
+},
+"EQ-122": {
+"tipo": "Consumible"
+},
+"EQ-123": {
+"tipo": "Consumible"
+},
+"EQ-124": {
+"tipo": "Consumible"
+},
+"EQ-125": {
+"tipo": "Consumible"
+},
+"EQ-126": {
+"tipo": "Consumible"
+},
+"EQ-127": {
+"tipo": "Consumible"
+},
+"EQ-128": {
+"tipo": "Consumible"
+},
+"EQ-129": {
+"tipo": "Consumible"
+},
+"EQ-130": {
+"tipo": "Consumible"
+},
+"EQ-131": {
+"tipo": "Consumible"
+},
+"EQ-132": {
+"tipo": "Simulador"
+},
+"EQ-133": {
+"tipo": "Accesorio"
+},
+"EQ-134": {
+"tipo": "Accesorio"
+},
+"EQ-135": {
+"tipo": "Consumible"
+},
+"EQ-136": {
+"tipo": "Accesorio"
+},
+"EQ-137": {
+"tipo": "Accesorio"
+},
+"EQ-138": {
+"kit": "SimMom",
+"tipo": "Consumible"
+},
+"EQ-139": {
+"kit": "SimMom",
+"tipo": "Consumible"
+},
+"EQ-140": {
+"kit": "SimMom",
+"tipo": "Consumible"
+},
+"EQ-141": {
+"kit": "SimMom",
+"tipo": "Accesorio"
+},
+"EQ-142": {
+"kit": "SimMom",
+"tipo": "Accesorio"
+},
+"EQ-143": {
+"kit": "SimMom",
+"tipo": "Consumible"
+},
+"EQ-144": {
+"tipo": "Electrónica / general"
+},
+"EQ-145": {
+"kit": "SimMom",
+"tipo": "Consumible"
+},
+"EQ-146": {
+"kit": "SimMom",
+"tipo": "Accesorio"
+},
+"EQ-147": {
+"kit": "SimMom",
+"tipo": "Consumible"
+},
+"EQ-148": {
+"kit": "SimMom",
+"tipo": "Consumible"
+},
+"EQ-149": {
+"kit": "VitalSim",
+"pertenece": "EQ-200",
+"tipo": "Accesorio"
+},
+"EQ-150": {
+"kit": "VitalSim",
+"pertenece": "EQ-198",
+"tipo": "Accesorio"
+},
+"EQ-151": {
+"kit": "VitalSim",
+"tipo": "Accesorio"
+},
+"EQ-152": {
+"kit": "Brazo de venopunción",
+"tipo": "Simulador"
+},
+"EQ-153": {
+"kit": "Brazo de venopunción",
+"tipo": "Simulador"
+},
+"EQ-154": {
+"kit": "Brazo de venopunción",
+"tipo": "Simulador"
+},
+"EQ-155": {
+"kit": "Brazo de venopunción",
+"tipo": "Simulador"
+},
+"EQ-156": {
+"tipo": "Simulador"
+},
+"EQ-157": {
+"kit": "SimPad PLUS (Laerdal)",
+"tipo": "Accesorio"
+},
+"EQ-158": {
+"kit": "SimPad PLUS (Laerdal)",
+"tipo": "Accesorio"
+},
+"EQ-159": {
+"tipo": "Electrónica / general"
+},
+"EQ-160": {
+"kit": "SimPad PLUS (Laerdal)",
+"tipo": "Accesorio"
+},
+"EQ-161": {
+"tipo": "Equipo clínico"
+},
+"EQ-162": {
+"tipo": "Equipo clínico"
+},
+"EQ-163": {
+"tipo": "Equipo clínico"
+},
+"EQ-164": {
+"tipo": "Equipo clínico"
+},
+"EQ-165": {
+"kit": "Videolaringoscopio McGrath",
+"tipo": "Accesorio"
+},
+"EQ-166": {
+"tipo": "Electrónica / general"
+},
+"EQ-167": {
+"tipo": "Electrónica / general"
+},
+"EQ-168": {
+"tipo": "Electrónica / general"
+},
+"EQ-169": {
+"tipo": "Electrónica / general"
+},
+"EQ-170": {
+"tipo": "Electrónica / general"
+},
+"EQ-171": {
+"tipo": "Electrónica / general"
+},
+"EQ-172": {
+"tipo": "Equipo clínico"
+},
+"EQ-173": {
+"tipo": "Equipo clínico"
+},
+"EQ-174": {
+"tipo": "Equipo clínico"
+},
+"EQ-175": {
+"tipo": "Equipo clínico"
+},
+"EQ-176": {
+"tipo": "Equipo clínico"
+},
+"EQ-177": {
+"tipo": "Electrónica / general"
+},
+"EQ-178": {
+"tipo": "Electrónica / general"
+},
+"EQ-179": {
+"tipo": "Electrónica / general"
+},
+"EQ-180": {
+"tipo": "Equipo clínico"
+},
+"EQ-181": {
+"tipo": "Equipo clínico"
+},
+"EQ-182": {
+"tipo": "Electrónica / general"
+},
+"EQ-183": {
+"tipo": "Equipo clínico"
+},
+"EQ-184": {
+"kit": "Espirómetro Welch Allyn",
+"tipo": "Consumible"
+},
+"EQ-185": {
+"tipo": "Electrónica / general"
+},
+"EQ-186": {
+"kit": "Espirómetro Welch Allyn",
+"tipo": "Accesorio"
+},
+"EQ-187": {
+"tipo": "Electrónica / general"
+},
+"EQ-188": {
+"tipo": "Electrónica / general"
+},
+"EQ-189": {
+"tipo": "Electrónica / general"
+},
+"EQ-190": {
+"tipo": "Electrónica / general"
+},
+"EQ-191": {
+"tipo": "Electrónica / general"
+},
+"EQ-192": {
+"tipo": "Electrónica / general"
+},
+"EQ-193": {
+"tipo": "Electrónica / general"
+},
+"EQ-194": {
+"tipo": "Electrónica / general"
+},
+"EQ-195": {
+"tipo": "Electrónica / general"
+},
+"EQ-196": {
+"tipo": "Equipo clínico"
+},
+"EQ-197": {
+"tipo": "Equipo clínico"
+},
+"EQ-198": {
+"kit": "VitalSim",
+"tipo": "Accesorio"
+},
+"EQ-199": {
+"kit": "VitalSim",
+"tipo": "Accesorio"
+},
+"EQ-200": {
+"kit": "VitalSim",
+"tipo": "Accesorio"
+},
+"EQ-201": {
+"tipo": "Simulador"
+},
+"EQ-202": {
+"tipo": "Electrónica / general"
+},
+"EQ-203": {
+"tipo": "Equipo clínico"
+},
+"EQ-204": {
+"tipo": "Consumible"
+},
+"EQ-205": {
+"tipo": "Consumible"
+},
+"EQ-206": {
+"tipo": "Equipo clínico"
+},
+"EQ-207": {
+"tipo": "Electrónica / general"
+},
+"EQ-208": {
+"tipo": "Electrónica / general"
+},
+"EQ-209": {
+"tipo": "Electrónica / general"
+},
+"EQ-210": {
+"tipo": "Electrónica / general"
+},
+"EQ-211": {
+"tipo": "Electrónica / general"
+},
+"EQ-212": {
+"tipo": "Electrónica / general"
+},
+"EQ-213": {
+"tipo": "Electrónica / general"
+},
+"EQ-214": {
+"tipo": "Electrónica / general"
+},
+"EQ-215": {
+"tipo": "Equipo clínico"
+},
+"EQ-216": {
+"tipo": "Equipo clínico"
+},
+"EQ-217": {
+"tipo": "Equipo clínico"
+},
+"EQ-218": {
+"tipo": "Equipo clínico"
+},
+"EQ-219": {
+"tipo": "Equipo clínico"
+},
+"EQ-220": {
+"tipo": "Equipo clínico"
+},
+"EQ-221": {
+"tipo": "Equipo clínico"
+},
+"EQ-222": {
+"tipo": "Electrónica / general"
+},
+"EQ-223": {
+"tipo": "Consumible"
+},
+"EQ-224": {
+"kit": "SimMom",
+"tipo": "Accesorio"
+},
+"EQ-225": {
+"tipo": "Consumible"
+},
+"EQ-226": {
+"tipo": "Consumible"
+},
+"EQ-227": {
+"tipo": "Consumible"
+},
+"EQ-228": {
+"tipo": "Consumible"
+},
+"EQ-229": {
+"tipo": "Equipo clínico"
+},
+"EQ-230": {
+"tipo": "Equipo clínico"
+},
+"EQ-231": {
+"tipo": "Equipo clínico"
+},
+"EQ-232": {
+"tipo": "Equipo clínico"
+},
+"EQ-233": {
+"tipo": "Equipo clínico"
+},
+"EQ-234": {
+"tipo": "Equipo clínico"
+},
+"EQ-235": {
+"tipo": "Equipo clínico"
+},
+"EQ-236": {
+"tipo": "Equipo clínico"
+},
+"EQ-237": {
+"tipo": "Equipo clínico"
+},
+"EQ-238": {
+"tipo": "Equipo clínico"
+},
+"EQ-239": {
+"tipo": "Equipo clínico"
+},
+"EQ-240": {
+"tipo": "Equipo clínico"
+},
+"EQ-241": {
+"tipo": "Equipo clínico"
+},
+"EQ-242": {
+"tipo": "Equipo clínico"
+},
+"EQ-243": {
+"tipo": "Equipo clínico"
+},
+"EQ-244": {
+"tipo": "Consumible"
+},
+"EQ-245": {
+"tipo": "Consumible"
+},
+"EQ-246": {
+"tipo": "Consumible"
+},
+"EQ-247": {
+"tipo": "Consumible"
+},
+"EQ-248": {
+"tipo": "Consumible"
+},
+"EQ-249": {
+"tipo": "Consumible"
+},
+"EQ-250": {
+"tipo": "Consumible"
+},
+"EQ-251": {
+"tipo": "Accesorio"
+},
+"EQ-252": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-253": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Consumible"
+},
+"EQ-254": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Consumible"
+},
+"EQ-255": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Consumible"
+},
+"EQ-256": {
+"kit": "PROMPT Flex",
+"pertenece": "EQ-347",
+"tipo": "Consumible"
+},
+"EQ-257": {
+"kit": "PROMPT Flex",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-260": {
+"kit": "PROMPT Flex · Módulo cesárea (ECSM)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-264": {
+"kit": "Clinical Male Pelvic Trainer A",
+"tipo": "Accesorio"
+},
+"EQ-265": {
+"kit": "Clinical Male Pelvic Trainer A",
+"tipo": "Accesorio"
+},
+"EQ-266": {
+"kit": "Clinical Male Pelvic Trainer A",
+"tipo": "Accesorio"
+},
+"EQ-267": {
+"kit": "Clinical Male Pelvic Trainer A",
+"tipo": "Accesorio"
+},
+"EQ-268": {
+"kit": "Clinical Male Pelvic Trainer A",
+"tipo": "Accesorio"
+},
+"EQ-269": {
+"kit": "Clinical Male Pelvic Trainer A",
+"tipo": "Accesorio"
+},
+"EQ-270": {
+"kit": "Clinical Male Pelvic Trainer (accesorios extra)",
+"tipo": "Accesorio"
+},
+"EQ-271": {
+"kit": "Clinical Male Pelvic Trainer (accesorios extra)",
+"tipo": "Accesorio"
+},
+"EQ-272": {
+"kit": "Clinical Male Pelvic Trainer (accesorios extra)",
+"tipo": "Accesorio"
+},
+"EQ-273": {
+"kit": "Clinical Male Pelvic Trainer (accesorios extra)",
+"tipo": "Accesorio"
+},
+"EQ-274": {
+"kit": "Clinical Male Pelvic Trainer (accesorios extra)",
+"tipo": "Accesorio"
+},
+"EQ-275": {
+"kit": "Clinical Male Pelvic Trainer (accesorios extra)",
+"tipo": "Accesorio"
+},
+"EQ-276": {
+"kit": "Clinical Female Pelvic Trainer",
+"tipo": "Simulador"
+},
+"EQ-277": {
+"kit": "Clinical Female Pelvic Trainer",
+"pertenece": "EQ-276",
+"tipo": "Accesorio"
+},
+"EQ-278": {
+"kit": "Clinical Female Pelvic Trainer",
+"pertenece": "EQ-276",
+"tipo": "Accesorio"
+},
+"EQ-279": {
+"kit": "Clinical Female Pelvic Trainer",
+"pertenece": "EQ-276",
+"tipo": "Accesorio"
+},
+"EQ-280": {
+"kit": "Clinical Female Pelvic Trainer",
+"pertenece": "EQ-276",
+"tipo": "Accesorio"
+},
+"EQ-281": {
+"kit": "Clinical Female Pelvic Trainer",
+"pertenece": "EQ-276",
+"tipo": "Accesorio"
+},
+"EQ-282": {
+"kit": "Clinical Female Pelvic Trainer",
+"pertenece": "EQ-276",
+"tipo": "Accesorio"
+},
+"EQ-283": {
+"tipo": "Equipo clínico"
+},
+"EQ-284": {
+"tipo": "Equipo clínico"
+},
+"EQ-285": {
+"tipo": "Consumible"
+},
+"EQ-286": {
+"tipo": "Consumible"
+},
+"EQ-288": {
+"tipo": "Consumible"
+},
+"EQ-289": {
+"tipo": "Consumible"
+},
+"EQ-290": {
+"tipo": "Consumible"
+},
+"EQ-291": {
+"tipo": "Consumible"
+},
+"EQ-292": {
+"tipo": "Consumible"
+},
+"EQ-293": {
+"tipo": "Consumible"
+},
+"EQ-294": {
+"tipo": "Consumible"
+},
+"EQ-295": {
+"tipo": "Consumible"
+},
+"EQ-296": {
+"tipo": "Consumible"
+},
+"EQ-297": {
+"tipo": "Consumible"
+},
+"EQ-298": {
+"tipo": "Consumible"
+},
+"EQ-299": {
+"tipo": "Consumible"
+},
+"EQ-300": {
+"tipo": "Consumible"
+},
+"EQ-301": {
+"tipo": "Simulador"
+},
+"EQ-302": {
+"tipo": "Simulador"
+},
+"EQ-303": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-304": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Consumible"
+},
+"EQ-305": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Consumible"
+},
+"EQ-306": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-307": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-308": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Consumible"
+},
+"EQ-309": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Consumible"
+},
+"EQ-310": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-311": {
+"kit": "PROMPT Flex · Módulo dilatación cervical (CDE)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-312": {
+"kit": "PROMPT Flex · Módulo dilatación cervical (CDE)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-313": {
+"kit": "PROMPT Flex · Módulo dilatación cervical (CDE)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-314": {
+"kit": "PROMPT Flex · Módulo dilatación cervical (CDE)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-315": {
+"kit": "PROMPT Flex · Módulo dilatación cervical (CDE)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-316": {
+"kit": "PROMPT Flex · Módulo dilatación cervical (CDE)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-317": {
+"kit": "PROMPT Flex · Módulo dilatación cervical (CDE)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-318": {
+"kit": "PROMPT Flex · Módulo dilatación cervical (CDE)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-319": {
+"kit": "PROMPT Flex · Módulo dilatación cervical (CDE)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-320": {
+"kit": "Clinical Male Pelvic Trainer B",
+"pertenece": "EQ-321",
+"tipo": "Accesorio"
+},
+"EQ-321": {
+"kit": "Clinical Male Pelvic Trainer B",
+"tipo": "Simulador"
+},
+"EQ-322": {
+"kit": "Clinical Male Pelvic Trainer B",
+"pertenece": "EQ-321",
+"tipo": "Accesorio"
+},
+"EQ-323": {
+"kit": "Clinical Male Pelvic Trainer B",
+"pertenece": "EQ-321",
+"tipo": "Accesorio"
+},
+"EQ-324": {
+"kit": "Clinical Male Pelvic Trainer B",
+"pertenece": "EQ-321",
+"tipo": "Accesorio"
+},
+"EQ-325": {
+"kit": "Clinical Male Pelvic Trainer B",
+"pertenece": "EQ-321",
+"tipo": "Accesorio"
+},
+"EQ-326": {
+"kit": "Clinical Male Pelvic Trainer B",
+"pertenece": "EQ-321",
+"tipo": "Accesorio"
+},
+"EQ-327": {
+"kit": "Clinical Male Pelvic Trainer (accesorios extra)",
+"tipo": "Accesorio"
+},
+"EQ-328": {
+"kit": "Clinical Male Pelvic Trainer (accesorios extra)",
+"tipo": "Accesorio"
+},
+"EQ-329": {
+"kit": "Clinical Male Pelvic Trainer (accesorios extra)",
+"tipo": "Accesorio"
+},
+"EQ-330": {
+"kit": "Clinical Male Pelvic Trainer (accesorios extra)",
+"tipo": "Accesorio"
+},
+"EQ-331": {
+"kit": "Clinical Male Pelvic Trainer (accesorios extra)",
+"tipo": "Accesorio"
+},
+"EQ-332": {
+"kit": "Clinical Male Pelvic Trainer (accesorios extra)",
+"tipo": "Accesorio"
+},
+"EQ-333": {
+"kit": "PROMPT Flex · Módulo parto vaginal asistido (AVB)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-334": {
+"kit": "PROMPT Flex · Módulo parto vaginal asistido (AVB)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-335": {
+"kit": "PROMPT Flex · Módulo parto vaginal asistido (AVB)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-336": {
+"kit": "PROMPT Flex · Módulo parto vaginal asistido (AVB)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-337": {
+"kit": "PROMPT Flex · Módulo cesárea (ECSM)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-338": {
+"tipo": "Simulador"
+},
+"EQ-339": {
+"tipo": "Simulador"
+},
+"EQ-340": {
+"tipo": "Simulador"
+},
+"EQ-341": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-342": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Consumible"
+},
+"EQ-343": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Consumible"
+},
+"EQ-344": {
+"kit": "PROMPT Flex · Módulo hemorragia posparto (PPH)",
+"pertenece": "EQ-347",
+"tipo": "Consumible"
+},
+"EQ-345": {
+"kit": "PROMPT Flex",
+"pertenece": "EQ-347",
+"tipo": "Consumible"
+},
+"EQ-346": {
+"kit": "PROMPT Flex",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+},
+"EQ-347": {
+"kit": "PROMPT Flex",
+"tipo": "Simulador"
+},
+"EQ-348": {
+"kit": "PROMPT Flex",
+"pertenece": "EQ-347",
+"tipo": "Accesorio"
+}
+}
